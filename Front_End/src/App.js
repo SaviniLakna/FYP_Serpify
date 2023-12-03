@@ -1,10 +1,16 @@
 
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Landing from "./Routes/Landing";
+
 
 function App() {
   return (
-    <div className="App">
-      <h1>buruwo</h1>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Landing/>}/>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
