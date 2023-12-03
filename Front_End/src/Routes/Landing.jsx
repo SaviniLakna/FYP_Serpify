@@ -77,7 +77,64 @@ function Landing() {
 
 
 
-            Our Vision and Mission Statement
+            {/* Our Vision and Mission Statement */}
+            <div className="w-[80%] flex flex-row mx-auto space-x-3 mt-10 relative">
+              <div className="w-5/12 p-5 flex flex-col space-y-5">
+              <h5 className="subheading text-[16px] uppercase text-[#2C6E49] font-semibold">
+                  Our Mission
+                </h5>
+                <h2 className="mainheading text-[2rem] uppercase font-bold">
+                  Connecting Humans and Serpents for Mutual Safety.
+                </h2>
+                <p>
+                  In the heart of Sri Lankan residential areas, Serpify takes on
+                  the unique challenge of accurate snake identification. We use
+                  cutting-edge technology to ensure the safety of both humans
+                  and serpents, fostering coexistence and harmony. Join us on
+                  this journey to learn how to identify, assess, and respond to
+                  snake encounters, creating a safer, more understanding world.
+                </p>
+              </div>
+              <div className="w-2/12 p-5 flex justify-center items-center ">
+              <div className="w-[45px] h-[220px] bg-[#2C6E49] ">
+
+              </div>
+              </div>
+              <div className="w-5/12 p-5 flex flex-col space-y-5">
+              <h5 className="subheading text-[16px] uppercase text-[#2C6E49] font-semibold">
+                  Our Vision
+                </h5>
+                <h2 className="mainheading text-[2rem] uppercase font-bold">
+                  Connecting Humans and Serpents for Mutual Safety.
+                </h2>
+                <p>
+                  In the heart of Sri Lankan residential areas, Serpify takes on
+                  the unique challenge of accurate snake identification. We use
+                  cutting-edge technology to ensure the safety of both humans
+                  and serpents, fostering coexistence and harmony. Join us on
+                  this journey to learn how to identify, assess, and respond to
+                  snake encounters, creating a safer, more understanding world.
+                </p>
+              </div>
+            </div>
+            {/* Our Vision and Mission Statement */}
+
+
+
+            {/* What we do */}
+            <div className="w-[80%] flex flex-row mx-auto mt-[56px]">
+              <div className="section-intro w-full p-5 flex flex-col space-y-5 text-center">
+              <h5 className="subheading text-[16px] uppercase text-[#2C6E49] font-semibold">
+                  What we do
+                </h5>
+                <h2 className="mainheading text-[2rem] uppercase font-bold">
+                  Connecting Humans and Serpents for Mutual Safety.
+                </h2>
+              </div>
+            </div>
+            {/* What we do */}
+
+
           </div>
         </div>
       </div>
