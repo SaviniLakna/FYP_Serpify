@@ -1,7 +1,14 @@
 import React from "react";
 import Nav from "../Components/Nav";
+import Footer from "../Components/Footer";
 import Hero1 from "../Assets/Images/hero1.jpg";
+import Snake from "../Assets/Images/snake.png";
+import Snake2 from "../Assets/Images/snake2.png";
 import { CenterFocusStrong, Upload, NavigateNext } from "@mui/icons-material";
+
+import Rescure from "../Assets/Images/rescure.png";
+import Heart from "../Assets/Images/heart.png";
+import Hospital from "../Assets/Images/hospital.png";
 
 function Landing() {
   return (
@@ -71,16 +78,16 @@ function Landing() {
                   Learn More <NavigateNext />
                 </button>
               </div>
-              <div className="section-Image w-1/2"></div>
+              <div className="section-Image w-1/2">
+                <img src={Snake2} alt="snake2" className="Snake2"/>
+              </div>
             </div>
             {/* Who we are */}
-
-
 
             {/* Our Vision and Mission Statement */}
             <div className="w-[80%] flex flex-row mx-auto space-x-3 mt-10 relative">
               <div className="w-5/12 p-5 flex flex-col space-y-5">
-              <h5 className="subheading text-[16px] uppercase text-[#2C6E49] font-semibold">
+                <h5 className="subheading text-[16px] uppercase text-[#2C6E49] font-semibold">
                   Our Mission
                 </h5>
                 <h2 className="mainheading text-[2rem] uppercase font-bold">
@@ -96,12 +103,10 @@ function Landing() {
                 </p>
               </div>
               <div className="w-2/12 p-5 flex justify-center items-center ">
-              <div className="w-[45px] h-[220px] bg-[#2C6E49] ">
-
-              </div>
+                <div className="w-[45px] h-[220px] bg-[#2C6E49] "></div>
               </div>
               <div className="w-5/12 p-5 flex flex-col space-y-5">
-              <h5 className="subheading text-[16px] uppercase text-[#2C6E49] font-semibold">
+                <h5 className="subheading text-[16px] uppercase text-[#2C6E49] font-semibold">
                   Our Vision
                 </h5>
                 <h2 className="mainheading text-[2rem] uppercase font-bold">
@@ -119,25 +124,104 @@ function Landing() {
             </div>
             {/* Our Vision and Mission Statement */}
 
-
-
             {/* What we do */}
-            <div className="w-[80%] flex flex-row mx-auto mt-[56px]">
+            <div className="w-[80%] flex flex-col mx-auto mt-[56px]">
               <div className="section-intro w-full p-5 flex flex-col space-y-5 text-center">
-              <h5 className="subheading text-[16px] uppercase text-[#2C6E49] font-semibold">
+                <h5 className="subheading text-[16px] uppercase text-[#2C6E49] font-semibold">
                   What we do
                 </h5>
                 <h2 className="mainheading text-[2rem] uppercase font-bold">
-                  Connecting Humans and Serpents for Mutual Safety.
+                  Discover, Learn, and Protect.
                 </h2>
+              </div>
+
+              <div className="w-full flex flex-row space-x-5 mt-5 mb-5 mx-auto justify-center">
+                
+              <div className="w-2/12 rounded-lg border-[1px] border-[#2C6E49] p-5 items-center flex flex-col">
+                  <div className="w-[64px] h-[64px] relative mb-3">
+                    <img
+                      src={Snake}
+                      alt="Rescure"
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                  <h4 className="text-[#2C6E49] font-semibold uppercase">
+                    Snake Identification
+                  </h4>
+                  <p className="text-center">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Corrupti, explicabo!
+                  </p>
+                </div>
+
+
+                <div className="w-2/12 rounded-lg border-[1px] border-[#2C6E49] p-5 items-center flex flex-col">
+                  <div className="w-[64px] h-[64px] relative mb-3">
+                    <img
+                      src={Heart}
+                      alt="Heart"
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                  <h4 className="text-[#2C6E49] font-semibold uppercase">
+                    Snake Identification
+                  </h4>
+                  <p className="text-center">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Corrupti, explicabo!
+                  </p>
+                </div>
+
+
+                <div className="w-2/12 rounded-lg border-[1px] border-[#2C6E49] p-5 items-center flex flex-col">
+                  <div className="w-[64px] h-[64px] relative mb-3">
+                    <img
+                      src={Rescure}
+                      alt="Rescure"
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                  <h4 className="text-[#2C6E49] font-semibold uppercase">
+                    Snake Identification
+                  </h4>
+                  <p className="text-center">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Corrupti, explicabo!
+                  </p>
+                </div>
+
+
+                <div className="w-2/12 rounded-lg border-[1px] border-[#2C6E49] p-5 items-center flex flex-col">
+                  <div className="w-[64px] h-[64px] relative mb-3">
+                    <img
+                      src={Hospital}
+                      alt="Heart"
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                  <h4 className="text-[#2C6E49] font-semibold uppercase">
+                    Snake Identification
+                  </h4>
+                  <p className="text-center">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Corrupti, explicabo!
+                  </p>
+                </div>
+
+
+
+
+
+
               </div>
             </div>
             {/* What we do */}
-
-
           </div>
         </div>
       </div>
+
+      <Footer/>
+
     </div>
   );
 }
