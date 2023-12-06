@@ -1,0 +1,19 @@
+
+
+ 
+@media (max-width:576px) {
+    .mobile-menu {
+        transform: translateX(200%);
+        transition: transform 0.3s ease-in-out;
+      }
+      
+      .mobile-menu ul {
+        padding: 20px;
+      }
+      
+      .mobile-menu.show {
+        transform: translateX(0);
+      }
+      
+      
+  }
