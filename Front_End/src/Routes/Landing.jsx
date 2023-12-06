@@ -12,15 +12,15 @@ import Hospital from "../Assets/Images/hospital.png";
 
 function Landing() {
   return (
-    <div className="w-full h-screen">
+    <div className="w-full h-screen ">
       <Nav />
 
-      <div className="body-wrapper w-full">
+      <div className="body-wrapper w-full overflow-x-hidden">
         {/* hero content */}
         <div className="hero-wrapper w-full h-full object-cover">
           <div className="hero-layout w-full h-full absolute bg-gray-950 bg-opacity-70 justify-center items-center">
-            <div className="hero-caption p-5 w-[60%] mx-auto relative top-1/2  -translate-y-1/2 leading-none uppercase flex flex-col space-y-5 text-center">
-              <h2 className="hero-heading text-white font-bold text-[3rem] text-center drop-shadow-2xl">
+            <div className="hero-caption p-5 md:w-[60%] w-full mx-auto relative top-1/2  -translate-y-1/2 leading-none uppercase flex flex-col space-y-5 text-center">
+              <h2 className="hero-heading text-white font-bold md:text-[3rem] text-[1.8rem] text-center drop-shadow-2xl">
                 Empower Yourself to{" "}
                 <span className="text-[#8EA604]">Identify Snakes</span> Around
                 You Within A Minute
@@ -29,7 +29,7 @@ function Landing() {
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Et,
                 adipisci.
               </p>
-              <div className="mt-5 button-section justify-center space-x-5 flex flex-row">
+              <div className="mt-5 button-section justify-center md:space-x-5 space-y-5 md:space-y-0 flex md:flex-row flex-col">
                 <button
                   className=" rounded-full bg-gradient-to-r from-[#2C6E49] to-[#8EA604]
                 shadow-2xl shadow-[#8EA604]
@@ -54,12 +54,12 @@ function Landing() {
         <div className="body-content mt-10 w-full">
           <div className="body w-full">
             {/* Who we are */}
-            <div className="w-[80%] flex flex-row mx-auto ">
-              <div className="section-intro w-1/2 p-5 flex flex-col space-y-5">
+            <div className="md:w-[80%] w-[95%] flex md:flex-row flex-col mx-auto ">
+              <div className="section-intro md:w-1/2 w-full p-5 flex flex-col space-y-5 md:text-left text-center items-center md:items-start">
                 <h5 className="subheading text-[16px] uppercase text-[#2C6E49] font-semibold">
                   Who we are
                 </h5>
-                <h2 className="mainheading text-[2rem] uppercase font-bold">
+                <h2 className="mainheading md:text-[2rem] text-[1.5rem] uppercase font-bold">
                   Connecting Humans and Serpents for Mutual Safety.
                 </h2>
                 <p>
@@ -78,19 +78,19 @@ function Landing() {
                   Learn More <NavigateNext />
                 </button>
               </div>
-              <div className="section-Image w-1/2">
+              <div className="section-Image md:w-1/2 w-full">
                 <img src={Snake2} alt="snake2" className="Snake2"/>
               </div>
             </div>
             {/* Who we are */}
 
             {/* Our Vision and Mission Statement */}
-            <div className="w-[80%] flex flex-row mx-auto space-x-3 mt-10 relative">
-              <div className="w-5/12 p-5 flex flex-col space-y-5">
+            <div className="md:w-[80%] w-[95%] flex md:flex-row flex-col mx-auto md:space-x-3 mt-10 relative">
+              <div className="md:w-5/12 w-full p-5 flex flex-col space-y-5 md:text-left text-center">
                 <h5 className="subheading text-[16px] uppercase text-[#2C6E49] font-semibold">
                   Our Mission
                 </h5>
-                <h2 className="mainheading text-[2rem] uppercase font-bold">
+                <h2 className="mainheading md:text-[2rem] text-[1.5rem] uppercase font-bold">
                   Connecting Humans and Serpents for Mutual Safety.
                 </h2>
                 <p>
@@ -102,14 +102,14 @@ function Landing() {
                   snake encounters, creating a safer, more understanding world.
                 </p>
               </div>
-              <div className="w-2/12 p-5 flex justify-center items-center ">
+              <div className="w-2/12 p-5 md:flex hidden justify-center items-center ">
                 <div className="w-[45px] h-[220px] bg-[#2C6E49] "></div>
               </div>
-              <div className="w-5/12 p-5 flex flex-col space-y-5">
+              <div className="md:w-5/12 w-full md:p-5 flex flex-col space-y-5 md:text-left text-center">
                 <h5 className="subheading text-[16px] uppercase text-[#2C6E49] font-semibold">
                   Our Vision
                 </h5>
-                <h2 className="mainheading text-[2rem] uppercase font-bold">
+                <h2 className="mainheading md:text-[2rem] text-[1.5rem] uppercase font-bold">
                   Connecting Humans and Serpents for Mutual Safety.
                 </h2>
                 <p>
@@ -125,19 +125,20 @@ function Landing() {
             {/* Our Vision and Mission Statement */}
 
             {/* What we do */}
-            <div className="w-[80%] flex flex-col mx-auto mt-[56px]">
+            <div className="md:w-[80%] w-[95%] flex flex-col mx-auto mt-[56px]">
               <div className="section-intro w-full p-5 flex flex-col space-y-5 text-center">
                 <h5 className="subheading text-[16px] uppercase text-[#2C6E49] font-semibold">
                   What we do
                 </h5>
-                <h2 className="mainheading text-[2rem] uppercase font-bold">
+                <h2 className="mainheading md:text-[2rem] text-[1.5rem] uppercase font-bold">
                   Discover, Learn, and Protect.
                 </h2>
               </div>
 
-              <div className="w-full flex flex-row space-x-5 mt-5 mb-5 mx-auto justify-center">
+              <div className="w-full flex md:flex-row md:space-x-5 space-x-0 flex-wrap mt-5 mb-5 mx-auto justify-center ">
                 
-              <div className="w-2/12 rounded-lg border-[1px] border-[#2C6E49] p-5 items-center flex flex-col">
+              <div className="md:w-2/12 w-1/2 p-1">
+                  <div className="w-full rounded-lg border-[1px] border-[#2C6E49] flex flex-col p-5  items-center ">
                   <div className="w-[64px] h-[64px] relative mb-3">
                     <img
                       src={Snake}
@@ -152,28 +153,13 @@ function Landing() {
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Corrupti, explicabo!
                   </p>
-                </div>
-
-
-                <div className="w-2/12 rounded-lg border-[1px] border-[#2C6E49] p-5 items-center flex flex-col">
-                  <div className="w-[64px] h-[64px] relative mb-3">
-                    <img
-                      src={Heart}
-                      alt="Heart"
-                      className="w-full h-full object-contain"
-                    />
                   </div>
-                  <h4 className="text-[#2C6E49] font-semibold uppercase">
-                    Snake Identification
-                  </h4>
-                  <p className="text-center">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Corrupti, explicabo!
-                  </p>
-                </div>
+                 
+              </div>
 
 
-                <div className="w-2/12 rounded-lg border-[1px] border-[#2C6E49] p-5 items-center flex flex-col">
+              <div className="md:w-2/12 w-1/2 p-1">
+                  <div className="w-full rounded-lg border-[1px] border-[#2C6E49] flex flex-col p-5  items-center ">
                   <div className="w-[64px] h-[64px] relative mb-3">
                     <img
                       src={Rescure}
@@ -188,13 +174,16 @@ function Landing() {
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Corrupti, explicabo!
                   </p>
-                </div>
+                  </div>
+                 
+              </div>
 
 
-                <div className="w-2/12 rounded-lg border-[1px] border-[#2C6E49] p-5 items-center flex flex-col">
+              <div className="md:w-2/12 w-1/2 p-1">
+                  <div className="w-full rounded-lg border-[1px] border-[#2C6E49] flex flex-col p-5  items-center ">
                   <div className="w-[64px] h-[64px] relative mb-3">
                     <img
-                      src={Hospital}
+                      src={Heart}
                       alt="Heart"
                       className="w-full h-full object-contain"
                     />
@@ -206,7 +195,30 @@ function Landing() {
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Corrupti, explicabo!
                   </p>
-                </div>
+                  </div>
+                 
+              </div>
+
+
+              <div className="md:w-2/12 w-1/2 p-1">
+                  <div className="w-full rounded-lg border-[1px] border-[#2C6E49] flex flex-col p-5  items-center ">
+                  <div className="w-[64px] h-[64px] relative mb-3">
+                    <img
+                      src={Hospital}
+                      alt="Hospital"
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                  <h4 className="text-[#2C6E49] font-semibold uppercase">
+                    Snake Identification
+                  </h4>
+                  <p className="text-center">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Corrupti, explicabo!
+                  </p>
+                  </div>
+                 
+              </div>
 
 
 
