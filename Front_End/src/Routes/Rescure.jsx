@@ -38,7 +38,7 @@ function Rescure() {
             <button className="bg-[#2C6E49]  text-white px-4 py-2 rounded-md">
               Search
             </button>
-           <select className="w-1/5 py-2 px-2  border-[#565656] border-opacity-10 border-[1px] outline-none">
+           <select className="w-1/5 py-2 px-2  border-[#565656] border-opacity-10 border-[1px] outline-none rounded-md">
             <option>10</option>
             <option>20</option>
             <option>30</option>

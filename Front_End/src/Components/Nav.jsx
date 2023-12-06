@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-
 import Logo from "../Assets/Images/logo.png";
 import { Link } from "react-router-dom";
 
@@ -47,7 +46,11 @@ function Nav() {
             <Link to="/Rescure">
             <li className="text-[14px] uppercase cursor-pointer">Find Rescure</li>
             </Link>
+
+            <Link to="/Hospitals">
             <li className="text-[14px] uppercase cursor-pointer">Hospitals nearby</li>
+            </Link>
+
 
             <li className=" text-[14px] uppercase cursor-pointer">First Aids</li>
           </ul>
