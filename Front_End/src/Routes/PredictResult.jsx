@@ -13,7 +13,7 @@ function PredictResult() {
       <Nav />
 
       <div className="body-wrapper w-full">
-        <div className="hero-wrapper w-full h-1/3 relative  bg-slate-700">
+        <div className="hero-wrapper_sub w-full h-1/3 relative  bg-slate-700">
           <div className="hero-layout w-full h-full absolute bg-gray-950 bg-opacity-70 justify-center items-center">
             {" "}
           </div>
@@ -23,11 +23,11 @@ function PredictResult() {
             className="w-full h-full object-cover"
           ></img>
         </div>
-        <div className="w-full p-10 border-b-[1px] border-[#565656] border-opacity-10 flex flex-row justify-start items-center space-x-3">
+        <div className="w-full md:p-10 p-3 border-b-[1px] border-[#565656] border-opacity-10 flex flex-row justify-start items-center space-x-3">
           <h5> Home </h5> <NavigateNext /> <h5>Predict Result</h5>
         </div>
 
-        <div className="w-[80%] mx-auto mt-[68px]">
+        <div className="md:w-[80%] w-[95%] mx-auto mt-[68px]">
           <div className="w-full flex md:flex-row flex-col ">
             <div className="flex flex-col space-y-3 md:w-1/3 w-full border-r-[1px] border-[#565656] border-opacity-10 ">
               <h4 className="text-[16px] font-semibold">Uploaded Image</h4>

@@ -15,5 +15,10 @@
         transform: translateX(0);
       }
       
+
+      .hero-wrapper_sub
+      {
+        height: 20vh !important;
+      }
       
   }
