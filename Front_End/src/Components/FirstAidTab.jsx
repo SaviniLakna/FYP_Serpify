@@ -209,7 +209,7 @@ export default function FullWidthTabs() {
         නඩත්තු කටයුතු හේතුවෙන් වසා ඇත
         </FistAidTab>
         <FistAidTab value={value} index={2} dir={theme.direction}>
-        සිංහල තෙරියා ද?
+        සිංහල බෑ ද?
         </FistAidTab>
       </SwipeableViews>
     </Box>
