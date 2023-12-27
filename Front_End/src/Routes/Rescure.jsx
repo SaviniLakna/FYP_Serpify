@@ -35,7 +35,7 @@ function Rescure() {
           <h5> Home </h5> <NavigateNext /> <h5>Find Rescure</h5>
         </div>
 
-        <div className="md:w-[80%] w-[95%] mx-auto md:mt-[68px] mt-[24px]">
+        <div className="lg:w-[80%] w-[95%] mx-auto md:mt-[68px] mt-[24px]">
           <div className=" md:w-2/3 w-full mb-3 flex flex-row space-x-3 justify-start items-center">
             <input
               type="text"

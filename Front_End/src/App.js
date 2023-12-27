@@ -5,6 +5,7 @@ import Landing from "./Routes/Landing";
 import Rescure from "./Routes/Rescure";
 import Hospitals from "./Routes/Hospitals";
 import PredictResult from "./Routes/PredictResult";
+import FirstAids from "./Routes/FirstAids";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="Rescure" element={<Rescure/>}/>
         <Route path="Hospitals" element={<Hospitals/>}/>
         <Route path="PredictResult" element={<PredictResult/>}/>
+        <Route path="FirstAids" element={<FirstAids/>}/>
       </Routes>
     </BrowserRouter>
   );

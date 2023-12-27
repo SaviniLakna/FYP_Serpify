@@ -11,6 +11,47 @@ import Heart from "../Assets/Images/heart.png";
 import Hospital from "../Assets/Images/hospital.png";
 
 function Landing() {
+
+
+  const whatWeDoList=[
+    {
+      title:'Snake Identification',
+      description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, explicabo!',
+      wwdicon: Snake,
+    },
+    {
+      title:'Rescuer details',
+      description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, explicabo!',
+      wwdicon: Rescure,
+    },
+    {
+      title:'Provide First Aid ',
+      description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, explicabo!',
+      wwdicon: Heart,
+    },
+    {
+      title:'Nearest Hospitals ',
+      description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, explicabo!',
+      wwdicon: Hospital,
+    }
+  ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   return (
     <div className="w-full h-screen ">
       <Nav />
@@ -125,7 +166,7 @@ function Landing() {
             {/* Our Vision and Mission Statement */}
 
             {/* What we do */}
-            <div className="md:w-[80%] w-[95%] flex flex-col mx-auto mt-[56px]">
+            <div className="lg:w-[80%] w-[95%] flex flex-col mx-auto mt-[56px]">
               <div className="section-intro w-full p-5 flex flex-col space-y-5 text-center">
                 <h5 className="subheading text-[16px] uppercase text-[#2C6E49] font-semibold">
                   What we do
@@ -137,91 +178,30 @@ function Landing() {
 
               <div className="w-full flex md:flex-row md:space-x-5 space-x-0 flex-wrap mt-5 mb-5 mx-auto justify-center ">
                 
-              <div className="md:w-2/12 w-1/2 p-1">
+
+{whatWeDoList.map((whatwedo, index) => (
+  
+  <div className="md:w-2/12 w-1/2 p-1" key={index}>
                   <div className="w-full rounded-lg border-[1px] border-[#2C6E49] flex flex-col p-5  items-center ">
                   <div className="w-[64px] h-[64px] relative mb-3">
                     <img
-                      src={Snake}
+                      src={whatwedo.wwdicon}
                       alt="Rescure"
                       className="w-full h-full object-contain"
                     />
                   </div>
-                  <h4 className="text-[#2C6E49] font-semibold uppercase">
-                    Snake Identification
+                  <h4 className="text-[#2C6E49] font-semibold uppercase text-center">
+                    {whatwedo.title}
                   </h4>
                   <p className="text-center">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Corrupti, explicabo!
+                    {whatwedo.description}
                   </p>
                   </div>
                  
               </div>
 
 
-              <div className="md:w-2/12 w-1/2 p-1">
-                  <div className="w-full rounded-lg border-[1px] border-[#2C6E49] flex flex-col p-5  items-center ">
-                  <div className="w-[64px] h-[64px] relative mb-3">
-                    <img
-                      src={Rescure}
-                      alt="Rescure"
-                      className="w-full h-full object-contain"
-                    />
-                  </div>
-                  <h4 className="text-[#2C6E49] font-semibold uppercase">
-                    Snake Identification
-                  </h4>
-                  <p className="text-center">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Corrupti, explicabo!
-                  </p>
-                  </div>
-                 
-              </div>
-
-
-              <div className="md:w-2/12 w-1/2 p-1">
-                  <div className="w-full rounded-lg border-[1px] border-[#2C6E49] flex flex-col p-5  items-center ">
-                  <div className="w-[64px] h-[64px] relative mb-3">
-                    <img
-                      src={Heart}
-                      alt="Heart"
-                      className="w-full h-full object-contain"
-                    />
-                  </div>
-                  <h4 className="text-[#2C6E49] font-semibold uppercase">
-                    Snake Identification
-                  </h4>
-                  <p className="text-center">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Corrupti, explicabo!
-                  </p>
-                  </div>
-                 
-              </div>
-
-
-              <div className="md:w-2/12 w-1/2 p-1">
-                  <div className="w-full rounded-lg border-[1px] border-[#2C6E49] flex flex-col p-5  items-center ">
-                  <div className="w-[64px] h-[64px] relative mb-3">
-                    <img
-                      src={Hospital}
-                      alt="Hospital"
-                      className="w-full h-full object-contain"
-                    />
-                  </div>
-                  <h4 className="text-[#2C6E49] font-semibold uppercase">
-                    Snake Identification
-                  </h4>
-                  <p className="text-center">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Corrupti, explicabo!
-                  </p>
-                  </div>
-                 
-              </div>
-
-
-
+))}
 
 
 

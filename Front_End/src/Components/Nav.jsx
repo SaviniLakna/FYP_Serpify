@@ -85,9 +85,11 @@ function Nav() {
               </li>
             </Link>
 
+            <Link to="/FirstAids">
             <li className=" text-[14px] uppercase cursor-pointer">
               First Aids
             </li>
+            </Link>
           </ul>
 
           <button className="lg:w-[128px] rounded-full bg-gradient-to-r from-[#2C6E49] to-[#8EA604] text-white text-[14px] font-semibold uppercase px-4 py-2 ">
@@ -144,7 +146,7 @@ function Nav() {
             </div>
           </Link>
 
-          <Link to="" onClick={toggleMobileMenu}>
+          <Link to="/FirstAids" onClick={toggleMobileMenu}>
             <div className="w-full flex flex-row justify-start space-x-3">
               <div className="w-[18px] h-[18px] relative ">
                 <img
