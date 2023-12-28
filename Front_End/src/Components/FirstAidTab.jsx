@@ -47,29 +47,33 @@ function a11yProps(index: number) {
 const firstAidListEng = [
   {
     title: "First aid in snakebite",
-    intro:
-      "Effective first aid should always be given to snakebite victims. It will prevent or minimise spread of venom that may have been introduced into the tissues, as well as complications resulting from the bite. Incorrect first aid may cause harm. <strong>The following simple, practical, effective and safe measures are recommended:</strong>",
+    intro:"Snakebite victims should always receive effective first aid. It will prevent or reduce the spread of venom delivered into the tissues and the consequences caused by the bite. Improper first aid can be harmful. <strong> We recommend the following easy, feasible, helpful, and secure actions. </strong>",
     listtitleone: "To do List",
     listtitletwo: "Not to do",
     liListone: [
       {
         list: [
-          "The bite area should be gently cleaned with soap and water",
-          "Remove jewelry, bangles, anklets, cords, and clothing as soon as possible to avoid issues that could create restriction in the event of swelling.",
-          "Take the victim to hospital as early as possible",
-          "If the patient is having difficulties breathing, especially after a krait bite, providing artificial breathing on the route to the hospital, either by mouth-to-mouth or bag and mask ventilation, is a lifesaving first aid step.",
+          "Make sure to reduce the victim's fear.",
+          "Keep the biting area unmoved and the patient relaxed.",
+          "Wash the bitten area with clean water and soap.",
+          "Remove jewellery and clothing in the bitten area.",
+          "Give Paracetamol only if necessary.",
+          "Give CPR treatment if the patient is short of breathing.",
+          "Take the victim to the nearest hospital as soon as possible.",
         ],
       },
     ],
     liListtwo: [
       {
         list: [
-          "Do not panic and be tempted to do anything detrimental to the victim.",
-          "Alcohol hastens circulation of venom and should not be given.",
-          "Do not apply tourniquets in the first aid treatment of snakebite. Applications of “pressure bandages”, as recommended in some guidelines, is also not recommended. The effectiveness of pressure bandages for bites of Sri Lankan snakes has not been proven.",
-          "Thambili(King coconut) and kurumba water and fruit juices should not be given. They contain potassium, which can cause problems if kidney damage occurs following snakebite.",
-          "Aspirin may produce persistent bleeding from the stomach, especially following Russell’s viper bite and should not be given.",
-          "Incision of or application of suction to the bite wound is not advisable. Snakes usually inject venom too deeply for suction to be of any use. Inexpert incisions may damage tendons, blood vessels and nerves; bleeding from these wounds and infection may create added problems."
+          "Don't suction or cut the wound. ",
+          "Do not apply pressure to the wounded area.",
+          "Don’t apply medicines that include potassium permanganate to the wound.",
+          "Avoid injection of liquids such as oil into the nose to provide medication.",
+          "Don’t give alcohol to the patient.",
+          "Do not serve King Coconut water or fruit juice to the patient",
+          "Do not provide Aspirin to the patient.",
+          "Do not panic or attempt to do anything harmful to the victim."
         ],
       },
     ],
