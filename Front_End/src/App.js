@@ -14,7 +14,7 @@ function App() {
         <Route path="/" element={<Landing/>}/>
         <Route path="Rescure" element={<Rescure/>}/>
         <Route path="Hospitals" element={<Hospitals/>}/>
-        <Route path="PredictResult" element={<PredictResult/>}/>
+        <Route path="/PredictResult/:snakeId" element={<PredictResult />} />
         <Route path="FirstAids" element={<FirstAids/>}/>
       </Routes>
     </BrowserRouter>

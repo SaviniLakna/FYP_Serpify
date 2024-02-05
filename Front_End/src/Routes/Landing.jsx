@@ -1,53 +1,85 @@
-import React from "react";
+import React, {useState} from "react";
 import Nav from "../Components/Nav";
 import Footer from "../Components/Footer";
 import Hero1 from "../Assets/Images/hero1.jpg";
 import Snake from "../Assets/Images/snake.png";
 import Snake2 from "../Assets/Images/snake2.png";
 import { CenterFocusStrong, Upload, NavigateNext } from "@mui/icons-material";
+import { useNavigate } from 'react-router-dom';
 
 import Rescure from "../Assets/Images/rescure.png";
 import Heart from "../Assets/Images/heart.png";
 import Hospital from "../Assets/Images/hospital.png";
 
+import CameraCaptureButton from "../Components/CameraComponent";
+
+
+import PredictResult from "./PredictResult";
+
 function Landing() {
 
+  const navigate = useNavigate();
+  const [snakeId, setSnakeId] = useState(null);
 
-  const whatWeDoList=[
+
+  const whatWeDoList = [
     {
-      title:'Snake Identification',
-      description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, explicabo!',
+      title: "Snake Identification",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, explicabo!",
       wwdicon: Snake,
     },
     {
-      title:'Rescuer details',
-      description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, explicabo!',
+      title: "Rescuer details",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, explicabo!",
       wwdicon: Rescure,
     },
     {
-      title:'Provide First Aid ',
-      description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, explicabo!',
+      title: "Provide First Aid ",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, explicabo!",
       wwdicon: Heart,
     },
     {
-      title:'Nearest Hospitals ',
-      description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, explicabo!',
+      title: "Nearest Hospitals ",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, explicabo!",
       wwdicon: Hospital,
+    },
+  ];
+
+
+
+  const handleImageUpload = async (event) => {
+    const file = event.target.files[0];
+    const formData = new FormData();
+    formData.append('file', file);
+
+    
+
+    try {
+      const response = await fetch('http://127.0.0.1:5000/predict', {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (!response.ok) {
+        throw new Error('Prediction failed');
+      }
+
+      const result = await response.json();
+      console.log('Snake id:', result.prediction);
+
+      setSnakeId(result.prediction);
+      navigate(`/PredictResult/${result.prediction}`, {
+        state: { file },
+      });
+
+    } catch (error) {
+      console.error('Error:', error.message);
     }
-  ]
-
-
-
-
-
-
-
-
-
-
-
-
-
+  };
 
 
 
@@ -71,16 +103,31 @@ function Landing() {
                 adipisci.
               </p>
               <div className="mt-5 button-section justify-center md:space-x-5 space-y-5 md:space-y-0 flex md:flex-row flex-col">
-                <button
-                  className=" rounded-full bg-gradient-to-r from-[#2C6E49] to-[#8EA604]
-                shadow-2xl shadow-[#8EA604]
-                text-white text-[14px] font-semibold uppercase px-4 py-4 btn border-[1px] border-[#8EA604]"
+               
+                <input
+                  type="file"
+                  className="hidden"
+                  accept="image/*"
+                  id="imageInput"
+                  onChange={(e) => handleImageUpload(e)}
+                />
+
+                <label
+                  htmlFor="imageInput"
+                  className="cursor-pointer rounded-full bg-gradient-to-r from-[#2C6E49] to-[#8EA604] 
+             shadow-2xl shadow-[#8EA604] text-white text-[14px] font-semibold uppercase px-4 py-4 btn 
+             border-[1px] border-[#8EA604] hover:bg-[#2C6E49] hover:shadow-[#8EA604] hover:border-[#2C6E49]"
                 >
                   <Upload /> Upload an Image
-                </button>
-                <button className=" bg-white rounded-full border-[1px] border-[#8EA604] text-[#2C6E49] text-[14px] font-semibold uppercase px-4 py-4  backdrop-blur-sm">
-                  <CenterFocusStrong /> Capture an Image
-                </button>
+                </label>
+
+               
+                
+                
+
+                
+                  <CameraCaptureButton/>
+                
               </div>
             </div>
           </div>
@@ -120,7 +167,7 @@ function Landing() {
                 </button>
               </div>
               <div className="section-Image md:w-1/2 w-full">
-                <img src={Snake2} alt="snake2" className="Snake2"/>
+                <img src={Snake2} alt="snake2" className="Snake2" />
               </div>
             </div>
             {/* Who we are */}
@@ -177,34 +224,23 @@ function Landing() {
               </div>
 
               <div className="w-full flex md:flex-row md:space-x-5 space-x-0 flex-wrap mt-5 mb-5 mx-auto justify-center ">
-                
-
-{whatWeDoList.map((whatwedo, index) => (
-  
-  <div className="md:w-2/12 w-1/2 p-1" key={index}>
-                  <div className="w-full rounded-lg border-[1px] border-[#2C6E49] flex flex-col p-5  items-center ">
-                  <div className="w-[64px] h-[64px] relative mb-3">
-                    <img
-                      src={whatwedo.wwdicon}
-                      alt="Rescure"
-                      className="w-full h-full object-contain"
-                    />
+                {whatWeDoList.map((whatwedo, index) => (
+                  <div className="md:w-2/12 w-1/2 p-1" key={index}>
+                    <div className="w-full rounded-lg border-[1px] border-[#2C6E49] flex flex-col p-5  items-center ">
+                      <div className="w-[64px] h-[64px] relative mb-3">
+                        <img
+                          src={whatwedo.wwdicon}
+                          alt="Rescure"
+                          className="w-full h-full object-contain"
+                        />
+                      </div>
+                      <h4 className="text-[#2C6E49] font-semibold uppercase text-center">
+                        {whatwedo.title}
+                      </h4>
+                      <p className="text-center">{whatwedo.description}</p>
+                    </div>
                   </div>
-                  <h4 className="text-[#2C6E49] font-semibold uppercase text-center">
-                    {whatwedo.title}
-                  </h4>
-                  <p className="text-center">
-                    {whatwedo.description}
-                  </p>
-                  </div>
-                 
-              </div>
-
-
-))}
-
-
-
+                ))}
               </div>
             </div>
             {/* What we do */}
@@ -212,8 +248,7 @@ function Landing() {
         </div>
       </div>
 
-      <Footer/>
-
+      <Footer />
     </div>
   );
 }

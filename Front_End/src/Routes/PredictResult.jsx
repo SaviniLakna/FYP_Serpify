@@ -1,13 +1,40 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Nav from "../Components/Nav";
 import Footer from "../Components/Footer";
 import Hero from "../Assets/Images/resc.jpg";
-import RescuresDB from "../Assets/Data/RescuresDB";
-import Snake1 from "../Assets/testpredictions/snake1.jpg";
-
-import { CenterFocusStrong, Upload, NavigateNext } from "@mui/icons-material";
+import SnakeDB from "../Assets/Data/snakeDB";
+import { NavigateNext } from "@mui/icons-material";
+import { useLocation, useParams } from "react-router-dom";
+import FullWidthTabs from "../Components/PredictionResultTab";
 
 function PredictResult() {
+  const { snakeId } = useParams();
+  const { state } = useLocation();
+  const file = state && state.file;
+  const [imageUrl, setImageUrl] = useState(null);
+  const [snakeData, setSnakeData] = useState(null);
+
+  useEffect(() => {
+    const foundSnakeData = SnakeDB.find((snake) => snake.snakeID === snakeId);
+
+    if (foundSnakeData) {
+      setSnakeData(foundSnakeData);
+
+      const imageUrl = URL.createObjectURL(file);
+      setImageUrl(imageUrl);
+
+      return () => URL.revokeObjectURL(imageUrl);
+    }
+  }, [snakeData, file]);
+
+  if (!snakeData) {
+    return <div>Loading...</div>;
+  }
+
+
+  
+
+
   return (
     <div className="w-full h-screen">
       <Nav />
@@ -17,6 +44,7 @@ function PredictResult() {
           <div className="hero-layout w-full h-full absolute bg-gray-950 bg-opacity-70 justify-center items-center">
             {" "}
           </div>
+
           <img
             src={Hero}
             alt='"Hero'
@@ -32,34 +60,49 @@ function PredictResult() {
             <div className="flex flex-col space-y-3 md:w-1/3 w-full border-r-[1px] border-[#565656] border-opacity-10 ">
               <h4 className="text-[16px] font-semibold">Uploaded Image</h4>
 
-              <div className=" md:w-[300px] md:h-auto relative">
-                <img
-                  src={Snake1}
-                  alt="uploadedimage"
-                  className="w-full h-full object-cover rounded-lg shadow-lg shadow-slate-400"
-                />
-              </div>
+              {imageUrl && (
+                <div className=" md:w-[200px] lg:w-[300px]  md:h-auto relative">
+                  <img
+                    src={imageUrl}
+                    alt="uploadedimage"
+                    className="w-full object-cover rounded-lg shadow-lg shadow-slate-400"
+                  />
+                </div>
+              )}
             </div>
 
             <div className="flex flex-col space-y-3 md:w-2/3 w-full justify-start px-5">
               <h4 className="text-[16px] font-semibold">Prediction Result</h4>
-            
-                <table className="w-full">
-                    <tr>
-                        <td className="w-2/12 py-2 border-b-[1px] border-r-[1px] border-[#565656] border-opacity-10 ">නාමය</td>
-                        <td className="w-10/12 py-2 border-b-[1px] border-[#565656] border-opacity-10 px-2">නාගයා</td>
-                    </tr>
-                    <tr>
-                        <td className="w-2/12 py-2 border-b-[1px] border-r-[1px] border-[#565656] border-opacity-10">විෂ ස්වභාවය</td>
-                        <td className="w-10/12 py-2 border-b-[1px] border-[#565656] border-opacity-10 px-2">උග්‍ර විෂ</td>
-                    </tr>
-                    <tr>
-                        <td className="w-2/12 py-2 border-b-[1px] border-r-[1px] border-[#565656] border-opacity-10">උපරිම දිග</td>
-                        <td className="w-10/12 py-2 border-b-[1px] border-[#565656] border-opacity-10 px-2">220 cm</td>
-                    </tr>
-                </table>
+
+              <FullWidthTabs snakeIdentifiedData={snakeData} />
+
               
             </div>
+          </div>
+
+          <div className=" w-100 mt-[56px] ">
+            <h2> Similar Ones </h2>
+
+            <div className="flex flex-wrap gap-4 mt-5">
+              <div className="md:w-3/12 w-1/2 lg:w-2/12 relative rounded-md">
+                <img
+                  src={imageUrl}
+                  alt="uploadedimage"
+                  className="w-full object-cover rounded-lg shadow-lg shadow-slate-400"
+                />
+              </div>
+
+              <div className="md:w-3/12 w-1/2 lg:w-2/12 relative rounded-md">
+                <img
+                  src={imageUrl}
+                  alt="uploadedimage"
+                  className="w-full object-cover rounded-lg shadow-lg shadow-slate-400"
+                />
+              </div>
+            </div>
+
+
+
           </div>
         </div>
       </div>

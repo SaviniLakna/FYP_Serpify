@@ -123,25 +123,32 @@ const firstAidListTam = [
   {
     title: "பாம்புக்கடியில் முதலுதவி",
     intro:"பாம்புக்கடியால் பாதிக்கப்பட்டவர்களுக்கு எப்போதும் பயனுள்ள முதலுதவி அளிக்கப்பட வேண்டும். இது திசுக்களில் அறிமுகப்படுத்தப்பட்ட விஷம் பரவுவதைத் தடுக்கும் அல்லது குறைக்கும், அத்துடன் கடித்ததால் ஏற்படும் சிக்கல்களும்.தவறான முதலுதவி தீங்கு விளைவிக்கும்.<strong> பின்வரும் எளிய, நடைமுறை, பயனுள்ள மற்றும் பாதுகாப்பான நடவடிக்கைகள் பரிந்துரைக்கப்படுகின்றன: </strong>",
-    listtitleone: "To do List",
-    listtitletwo: '<span className="text-red-500">Not to do</span> list',
+    listtitleone: "செய்ய வேண்டிய பட்டியல்",
+    listtitletwo: 'செய்யக்கூடாத ',
     liListone: [
       {
         list: [
-          "The bite area should be gently cleaned with soap and water",
-          "Remove jewelry, bangles, anklets, cords, and clothing as soon as possible to avoid issues that could create restriction in the event of swelling.",
-          "Take the victim to hospital as early as possible",
-          "If a patient is having difficulties breathing, especially after a krait bite, providing artificial breathing on the route to the hospital, either by mouth-to-mouth or bag and mask ventilation, is a lifesaving first aid step.",
+          "பாதிக்கப்பட்டவரின் பயத்தை குறைக்க உதவி செய்யவும்.",
+          "கடித்த பகுதியை அசையாமல் நோயாளியை நிதானமாக வைத்திருங்கள்.",
+          "கடித்த பகுதியை சுத்தமான தண்ணீர் மற்றும் சவர்க்காரமிட்டு கழுவவும்.",
+          "கடித்த இடத்தில் உள்ள நகைகள் மற்றும் ஆடைகளை அகற்றவும்.",
+          "தேவைப்பட்டால் மட்டுமே பாராசிட்டமால் கொடுக்கவும்.",
+          "நோயாளிக்கு மூச்சுத் திணறல் இருந்தால் CPR சிகிச்சை அளிக்கவும்.",
+          "பாதிக்கப்பட்டவரை விரைவில் அருகிலுள்ள மருத்துவமனைக்கு அழைத்துச் செல்லவும்."
         ],
       },
     ],
     liListtwo: [
       {
         list: [
-          "Do not panic and be tempted to do anything detrimental to the victim.",
-          "Remove jewelry, bangles, anklets, cords, and clothing as soon as possible to avoid issues that could create restriction in the event of swelling.",
-          "Take the victim to hospital as early as possible",
-          "If a patient is having difficulties breathing, especially after a krait bite, providing artificial breathing on the route to the hospital, either by mouth-to-mouth or bag and mask ventilation, is a lifesaving first aid step.",
+          "காயத்தை உறிஞ்சவோ வெட்டவோ கூடாது.",
+          "காயம்பட்ட இடத்தில் அழுத்தம் கொடுக்காதீர்கள்.",
+          "பொட்டாசியம் பெர்மாங்கனேட் அடங்கிய மருந்துகளை காயத்திற்குப் பயன்படுத்த வேண்டாம்.",
+          "மருந்து வழங்க மூக்கில் எண்ணெய் போன்ற திரவங்களை செலுத்துவதை தவிர்க்கவும்.",
+          "நோயாளிக்கு மது கொடுக்க வேண்டாம்.",
+          "நோயாளிக்கு இளநீர் அல்லது பழச்சாறு வழங்க வேண்டாம்.",
+          "நோயாளிக்கு ஆஸ்பிரின் வழங்க வேண்டாம்.",
+          "பீதி அடைய வேண்டாம் அல்லது பாதிக்கப்பட்டவருக்கு தீங்கு விளைவிக்கும் எதையும் செய்ய முயற்சிக்காதீர்கள்."
         ],
       },
     ],
@@ -386,49 +393,32 @@ export default function FullWidthTabs() {
             </div>
           ))}
 
-          <div className="w-full text-left text-[#3d3d3d] mt-10">
-            <h2 className="text-[1.2rem] font-semibold mb-5">
-              <span className="text-red-500">Not to do </span>list
-            </h2>
-            <ol className="flex flex-col list-decimal space-y-3">
-              <li>
-                Do not panic and be tempted to do anything detrimental to the
-                victim.
-              </li>
 
-              <li>
-                Alcohol hastens circulation of venom and should not be given.
-              </li>
+{firstAidListTam.map((firstaid, index) => (
+            <div className="w-full text-left text-[#3d3d3d] mt-10">
+              <h2 className="text-[1.2rem] font-semibold mb-10">
+              <span className="text-red-500">{firstaid.listtitletwo}</span> பட்டியல்
+              </h2>
 
-              <li>
-                Do not apply tourniquets in the first aid treatment of
-                snakebite. Applications of “pressure bandages”, as recommended
-                in some guidelines, is also not recommended. The effectiveness
-                of pressure bandages for bites of Sri Lankan snakes has not been
-                proven.
-              </li>
-
-              <li>
-                Incision of or application of suction to the bite wound is not
-                advisable. Snakes usually inject venom too deeply for suction to
-                be of any use. Inexpert incisions may damage tendons, blood
-                vessels and nerves; bleeding from these wounds and infection may
-                create added problems.
-              </li>
-
-              <li>
-                Thambili(King coconut) and kurumba water and fruit juices should
-                not be given. They contain potassium, which can cause problems
-                if kidney damage occurs following snakebite.
-              </li>
-
-              <li>
-                Aspirin may produce persistent bleeding from the stomach,
-                especially following Russell’s viper bite and should not be
-                given.
-              </li>
-            </ol>
-          </div>
+              <div>
+                {firstAidListTam.map((item, index) => (
+                  <div key={index}>
+                    {item.liListtwo.map((listItem, listIndex) => (
+                      <ol
+                        key={listIndex}
+                        className="flex flex-col space-y-3 list-decimal"
+                      >
+                        {listItem.list.map((listText, textIndex) => (
+                          <li key={textIndex}>{listText}</li>
+                        ))}
+                      </ol>
+                    ))}
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+          
         </FistAidTab>
       </SwipeableViews>
     </Box>
