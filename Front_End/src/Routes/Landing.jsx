@@ -225,7 +225,7 @@ function Landing() {
 
               <div className="w-full flex md:flex-row md:space-x-5 space-x-0 flex-wrap mt-5 mb-5 mx-auto justify-center ">
                 {whatWeDoList.map((whatwedo, index) => (
-                  <div className="md:w-2/12 w-1/2 p-1" key={index}>
+                  <div className="flex md:w-2/12 w-1/2 p-1" key={index}>
                     <div className="w-full rounded-lg border-[1px] border-[#2C6E49] flex flex-col p-5  items-center ">
                       <div className="w-[64px] h-[64px] relative mb-3">
                         <img
