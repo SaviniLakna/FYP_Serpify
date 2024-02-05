@@ -8,8 +8,8 @@ const CameraCaptureButton = () => {
   const handleToggleCamera = async () => {
     try {
       if (!isCameraOpen) {
-        // Request permission to access the rear camera
-        const stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } });
+        // Request permission to access the camera
+        const stream = await navigator.mediaDevices.getUserMedia({ video: true });
 
         if (videoRef.current) {
           videoRef.current.srcObject = stream;
