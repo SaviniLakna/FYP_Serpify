@@ -59,7 +59,7 @@ function Landing() {
     
 
     try {
-      const response = await fetch('http://192.168.8.195:5000/predict', {
+      const response = await fetch('http://127.0.0.1:5000/predict', {
         method: 'POST',
         body: formData,
       });
