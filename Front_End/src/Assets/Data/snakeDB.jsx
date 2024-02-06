@@ -11,7 +11,7 @@ const SnakeDB = [
         tamilName : "තෙල්කරවලා",
         engName : "තෙල්කරවලා",
         venomusLevelsinhala : "උග්‍ර විෂ",
-        venomusLeveleng : "උග්‍ර විෂ",
+        venomusLeveleng : "High",
         venomusLeveltam : "උග්‍ර විෂ",
         englishName : "Common krait",
         localnames : [
@@ -39,11 +39,13 @@ const SnakeDB = [
         similarOnes :[
             {
                 name : "Mudukarawala",
+           
                 venomusLevel: "highly venomous",
                 image: Mudukarawala,
             },
             {
                 name : "Aluradanakaya",
+               
                 image: Aluradanakaya,
                 venomusLevel: "Non venomous",
             },

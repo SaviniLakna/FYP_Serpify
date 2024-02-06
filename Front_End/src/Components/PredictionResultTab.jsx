@@ -113,7 +113,50 @@ export default function FullWidthTabs(props: FullWidthTabsProps) {
           dir={theme.direction}
           snakeData={props.snakeIdentifiedData}
         >
-          English data values of identified snakeID
+          <table className="w-full">
+            <tr>
+              <td className="w-2/12 py-2 border-b-[1px] border-r-[1px] border-[#565656] border-opacity-10 ">
+                Name
+              </td>
+              <td className="w-10/12 py-2 border-b-[1px] border-[#565656] border-opacity-10 px-2">
+                {props.snakeIdentifiedData.englishName}
+              </td>
+            </tr>
+            <tr>
+              <td className="w-2/12 py-2 border-b-[1px] border-r-[1px] border-[#565656] border-opacity-10">
+                Venomous Level
+              </td>
+              <td className="w-10/12 py-2 border-b-[1px] border-[#565656] border-opacity-10 px-2">
+                {props.snakeIdentifiedData.venomusLeveleng}
+              </td>
+            </tr>
+            <tr>
+              <td className="w-2/12 py-2 border-b-[1px] border-r-[1px] border-[#565656] border-opacity-10">
+                Description
+              </td>
+              <td className="w-10/12 py-2 border-b-[1px] border-[#565656] border-opacity-10 px-2">
+                {props.snakeIdentifiedData.engdescription.map(
+                  (list, index) => (
+                    <li>{list}</li>
+                  )
+                )}
+              </td>
+            </tr>
+            <tr>
+              <td className="w-2/12 py-2 border-b-[1px] border-r-[1px] border-[#565656] border-opacity-10">
+             Local Names
+              </td>
+              <td className="w-10/12 py-2 border-b-[1px] border-[#565656] border-opacity-10 px-2">
+                {props.snakeIdentifiedData.localnames.map(
+                  (list, index) => (
+                    <li>{list}</li>
+                  )
+                )}
+              </td>
+            </tr>
+
+          </table>
+
         </PredictionResultTab>
 
         <PredictionResultTab
