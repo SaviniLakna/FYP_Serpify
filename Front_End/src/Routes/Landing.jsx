@@ -1,11 +1,11 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import Nav from "../Components/Nav";
 import Footer from "../Components/Footer";
 import Hero1 from "../Assets/Images/hero1.jpg";
 import Snake from "../Assets/Images/snake.png";
 import Snake2 from "../Assets/Images/snake2.png";
 import { CenterFocusStrong, Upload, NavigateNext } from "@mui/icons-material";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 import Rescure from "../Assets/Images/rescure.png";
 import Heart from "../Assets/Images/heart.png";
@@ -13,14 +13,11 @@ import Hospital from "../Assets/Images/hospital.png";
 
 import CameraCaptureButton from "../Components/CameraComponent";
 
-
 import PredictResult from "./PredictResult";
 
 function Landing() {
-
   const navigate = useNavigate();
   const [snakeId, setSnakeId] = useState(null);
-
 
   const whatWeDoList = [
     {
@@ -49,40 +46,32 @@ function Landing() {
     },
   ];
 
-
-
   const handleImageUpload = async (event) => {
     const file = event.target.files[0];
     const formData = new FormData();
-    formData.append('file', file);
-
-    
+    formData.append("file", file);
 
     try {
-      const response = await fetch('http://127.0.0.1:5000/predict', {
-        method: 'POST',
+      const response = await fetch("http://127.0.0.1:5000/predict", {
+        method: "POST",
         body: formData,
       });
 
       if (!response.ok) {
-        throw new Error('Prediction failed');
+        throw new Error("Prediction failed");
       }
 
       const result = await response.json();
-      console.log('Snake id:', result.prediction);
+      console.log("Snake id:", result.prediction);
 
       setSnakeId(result.prediction);
       navigate(`/PredictResult/${result.prediction}`, {
         state: { file },
       });
-
     } catch (error) {
-      console.error('Error:', error.message);
+      console.error("Error:", error.message);
     }
   };
-
-
-
 
   return (
     <div className="w-full h-screen ">
@@ -102,32 +91,30 @@ function Landing() {
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Et,
                 adipisci.
               </p>
-              <div className="mt-5 button-section justify-center md:space-x-5 space-y-5 md:space-y-0 flex md:flex-row flex-col">
-               
-                <input
-                  type="file"
-                  className="hidden"
-                  accept="image/*"
-                  id="imageInput"
-                  onChange={(e) => handleImageUpload(e)}
-                />
 
-                <label
-                  htmlFor="imageInput"
-                  className="cursor-pointer rounded-full bg-gradient-to-r from-[#2C6E49] to-[#8EA604] 
-             shadow-2xl shadow-[#8EA604] text-white text-[14px] font-semibold uppercase px-4 py-4 btn 
-             border-[1px] border-[#8EA604] hover:bg-[#2C6E49] hover:shadow-[#8EA604] hover:border-[#2C6E49]"
-                >
-                  <Upload /> Upload an Image
-                </label>
+              <div className="flex flex-col mt-5 space-y-3 justify-center items-center">
+                <div className="mt-5 mb-3 button-section justify-center ">
+                  <input
+                    type="file"
+                    className="hidden"
+                    accept="image/*"
+                    id="imageInput"
+                    onChange={(e) => handleImageUpload(e)}
+                  />
 
-               
-                
-                
+                  <label
+                    htmlFor="imageInput"
+                    className="cursor-pointer rounded-full bg-gradient-to-r from-[#2C6E49] to-[#8EA604] 
+            shadow-2xl shadow-[#8EA604] text-white text-[14px] font-semibold uppercase px-4 py-4 btn 
+            border-[1px] border-[#8EA604] hover:bg-[#2C6E49] hover:shadow-[#8EA604] hover:border-[#2C6E49]"
+                  >
+                    <Upload /> Upload an Image
+                  </label>
+                </div>
 
-                
-                  {/* <CameraCaptureButton/> */}
-                
+                <div className="mt-3">
+                  <CameraCaptureButton/>
+                </div>
               </div>
             </div>
           </div>

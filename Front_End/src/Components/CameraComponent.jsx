@@ -1,169 +1,86 @@
-// import React, { useRef, useState } from 'react';
-
-// const CameraCaptureButton = () => {
-//   const videoRef = useRef(null);
-//   const canvasRef = useRef(null);
-//   const [isCameraOpen, setIsCameraOpen] = useState(false);
-
-//   const handleToggleCamera = async () => {
-//     try {
-//       if (!isCameraOpen) {
-//         // Request permission to access the camera
-//         const stream = await navigator.mediaDevices.getUserMedia({ video: true });
-
-//         if (videoRef.current) {
-//           videoRef.current.srcObject = stream;
-//         }
-//       }
-//       setIsCameraOpen(!isCameraOpen);
-//     } catch (error) {
-//       console.error('Error accessing camera:', error);
-//     }
-//   };
-
-//   const handleCaptureImage = () => {
-//     if (videoRef.current) {
-//       const video = videoRef.current;
-
-//       // Pause the video to capture a frame
-//       video.pause();
-
-//       // Draw the current video frame onto a canvas
-//       const canvas = canvasRef.current;
-//       const context = canvas.getContext('2d');
-//       context.drawImage(video, 0, 0, canvas.width, canvas.height);
-
-//       // Convert the canvas content to a data URL (base64-encoded PNG)
-//       const imageDataURL = canvas.toDataURL('image/png');
-
-//       // Do something with the captured image data (e.g., send it to the server)
-//       console.log(imageDataURL);
-
-//       // Resume the video
-//       video.play();
-//     }
-//   };
-
-//   return (
-//     <div className='flex flex-col space-y-3'>
-//       <button
-//         className="bg-white rounded-full block sm:hidden border-[1px]  border-[#8EA604] text-[#2C6E49] text-[14px] font-semibold uppercase px-4 py-4 backdrop-blur-sm"
-//         onClick={handleToggleCamera}
-//       >
-//         {isCameraOpen ? 'Close Camera' : 'Open Camera'}
-//       </button>
-//       <div className={`flex flex-row   ${isCameraOpen ? '' : 'hidden'}`}>
-//         <video ref={videoRef} autoPlay playsInline ></video>
-//         <canvas ref={canvasRef} style={{ display: 'none' }}></canvas>
-//       </div>
-      
-//       {isCameraOpen && (
-//         <button
-//           className="bg-white block sm:hidden rounded-full border-[1px] border-[#8EA604] text-[#2C6E49] text-[14px] font-semibold uppercase px-4 py-4 backdrop-blur-sm"
-//           onClick={handleCaptureImage}
-//         >
-//           Capture Image
-//         </button>
-//       )}
-      
-//     </div>
-//   );
-// };
-
-// export default CameraCaptureButton;
-
-
-
-
-
-
-
-
-
-
-// import Webcam from "react-webcam";
-// import React, { useRef, useState } from 'react';
-
-// const CameraCaptureButton = () => {
-//   const webcamRef = useRef(null);
-//   const [isCameraOpen, setIsCameraOpen] = useState(false);
-//   const [cameraType, setCameraType] = useState("environment"); // Use "environment" for rear camera
-
-//   const handleToggleCamera = () => {
-//     setIsCameraOpen(!isCameraOpen);
-//   };
-
-//   const handleCaptureImage = () => {
-//     if (webcamRef.current) {
-//       // Get a base64 encoded string of the current webcam image
-//       const imageDataURL = webcamRef.current.getScreenshot();
-
-//       // Do something with the captured image data (e.g., send it to the server)
-//       console.log(imageDataURL);
-//     }
-//   };
-
-//   return (
-//     <div className="flex flex-col space-y-3">
-//       <button
-//         className="bg-white rounded-full block sm:hidden border-[1px]  border-[#8EA604] text-[#2C6E49] text-[14px] font-semibold uppercase px-4 py-4 backdrop-blur-sm"
-//         onClick={handleToggleCamera}
-//       >
-//         {isCameraOpen ? "Close Camera" : "Open Camera"}
-//       </button>
-//       <div className={`flex flex-row   ${isCameraOpen ? "" : "hidden"}`}>
-//         <Webcam
-//           ref={webcamRef}
-//           audio={false}
-//           screenshotFormat="image/png"
-//           videoConstraints={{ facingMode: cameraType }}
-//         />
-//       </div>
-
-//       {isCameraOpen && (
-//         <button
-//           className="bg-white block sm:hidden rounded-full border-[1px] border-[#8EA604] text-[#2C6E49] text-[14px] font-semibold uppercase px-4 py-4 backdrop-blur-sm"
-//           onClick={handleCaptureImage}
-//         >
-//           Capture Image
-//         </button>
-//       )}
-//     </div>
-//   );
-// };
-
-// export default CameraCaptureButton;
 
 
 
 import React, { useRef, useState } from 'react';
-import Webcam from 'react-webcam'; // Make sure you have installed the 'react-webcam' package
+import Webcam from 'react-webcam';
+import { CenterFocusStrong } from "@mui/icons-material";
+import { useNavigate } from "react-router-dom";
+
 
 const CameraCaptureButton = () => {
   const webcamRef = useRef(null);
-  const [isCameraOpen, setIsCameraOpen] = useState(false);
-  const [cameraType, setCameraType] = useState('environment'); // Use 'environment' for rear camera
 
-  const handleToggleCamera = () => {
-    setIsCameraOpen(!isCameraOpen);
-  };
 
-  const handleCaptureImage = () => {
-    if (webcamRef.current) {
-      // Get a base64 encoded string of the current webcam image
-      const imageDataURL = webcamRef.current.getScreenshot();
+const [isCameraOpen, setIsCameraOpen] = useState(false);
 
-      // Do something with the captured image data (e.g., send it to the server)
-      console.log(imageDataURL);
+const handleToggleCamera = () => {
+setIsCameraOpen(!isCameraOpen);
+};
+
+
+const navigate = useNavigate();
+const [snakeId, setSnakeId] = useState(null);
+
+
+const handleCaptureImage = async () => {
+  if (webcamRef.current) {
+    const screenshot = webcamRef.current.getScreenshot();
+    const formData = new FormData();
+
+    // Create a Blob from the base64 data
+    const blob = dataURItoBlob(screenshot);
+    
+    // Append the Blob as a file to the FormData
+    formData.append("file", blob, "captured_image.png");
+
+    try {
+      const response = await fetch("http://localhost:5000/predict", {
+        method: "POST",
+        body: formData,
+      });
+
+      if (!response.ok) {
+        throw new Error("Prediction failed");
+      }
+
+      const result = await response.json();
+      console.log("Snake id:", result.prediction);
+
+      // Assuming setSnakeId and navigate functions are defined
+      setSnakeId(result.prediction);
+      navigate(`/PredictResult/${result.prediction}`, {
+        state: { file: screenshot },
+      });
+    } catch (error) {
+      console.error("Error:", error.message);
     }
-  };
+  }
+};
+
+function dataURItoBlob(dataURI) {
+  // Split the data URI to get the mime type and data
+  const [type, data] = dataURI.split(',');
+
+  // Convert base64 data to a Uint8Array
+  const byteCharacters = atob(data);
+  const byteNumbers = new Array(byteCharacters.length);
+  for (let i = 0; i < byteCharacters.length; i++) {
+    byteNumbers[i] = byteCharacters.charCodeAt(i);
+  }
+  const byteArray = new Uint8Array(byteNumbers);
+
+  // Create a Blob using the Uint8Array and mime type
+  const blob = new Blob([byteArray], { type: type.split(':')[1].split(';')[0] });
+  return blob;
+}
 
   return (
-    <div className="flex flex-col space-y-3">
+    <div className="justify-center items-center">
       <button
-        className="bg-white rounded-full block sm:hidden border-[1px] border-[#8EA604] text-[#2C6E49] text-[14px] font-semibold uppercase px-4 py-4 backdrop-blur-sm"
+        className="bg-white rounded-full mb-3 border-[1px] border-[#8EA604] text-[#2C6E49] text-[14px] font-semibold uppercase px-4 py-4 backdrop-blur-sm"
         onClick={handleToggleCamera}
       >
+        <CenterFocusStrong/>
         {isCameraOpen ? 'Close Camera' : 'Open Camera'}
       </button>
       <div className={`flex flex-row ${isCameraOpen ? '' : 'hidden'}`}>
@@ -171,21 +88,19 @@ const CameraCaptureButton = () => {
           ref={webcamRef}
           audio={false}
           screenshotFormat="image/png"
-          videoConstraints={{ facingMode: cameraType }}
         />
       </div>
 
       {isCameraOpen && (
         <button
-          className="bg-white block sm:hidden rounded-full border-[1px] border-[#8EA604] text-[#2C6E49] text-[14px] font-semibold uppercase px-4 py-4 backdrop-blur-sm"
+          className="bg-white mt-3 block mx-auto rounded-full border-[1px] border-[#8EA604] text-[#2C6E49] text-[14px] font-semibold uppercase px-4 py-4 backdrop-blur-sm"
           onClick={handleCaptureImage}
         >
-          Capture Image
+          <CenterFocusStrong/> Capture Image
         </button>
       )}
     </div>
   );
 };
-
 
 export default CameraCaptureButton;

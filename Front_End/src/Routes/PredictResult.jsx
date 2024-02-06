@@ -51,7 +51,7 @@ function PredictResult() {
             className="w-full h-full object-cover"
           ></img>
         </div>
-        <div className="w-full md:p-10 p-3 border-b-[1px] border-[#565656] border-opacity-10 flex flex-row justify-start items-center space-x-3">
+        <div className="w-full md:p-10 p-3 border-b-[1px] border-[#565656] border-opacity-10 flex flex-row justify-start items-center space-x-3 ">
           <h5> Home </h5> <NavigateNext /> <h5>Predict Result</h5>
         </div>
 
@@ -71,7 +71,7 @@ function PredictResult() {
               )}
             </div>
 
-            <div className="flex flex-col space-y-3 md:w-2/3 w-full justify-start px-5">
+            <div className="flex flex-col space-y-3 md:w-2/3 w-full justify-start px-5 mt-5 md:mt-0">
               <h4 className="text-[16px] font-semibold">Prediction Result</h4>
 
               <FullWidthTabs snakeIdentifiedData={snakeData} />
@@ -83,23 +83,29 @@ function PredictResult() {
           <div className=" w-100 mt-[56px] ">
             <h2> Similar Ones </h2>
 
-            <div className="flex flex-wrap gap-4 mt-5">
-              <div className="md:w-3/12 w-1/2 lg:w-2/12 relative rounded-md">
-                <img
-                  src={imageUrl}
-                  alt="uploadedimage"
-                  className="w-full object-cover rounded-lg shadow-lg shadow-slate-400"
-                />
+<div className="flex flex-wrap justify-center mx-auto ">
+{snakeData.similarOnes.map((similarSnake, index) => (
+           
+            <div
+              key={index}
+              className="md:w-3/12 w-1/2 lg:w-2/12 relative rounded-md p-2 flex flex-col  "
+            >
+              <img
+                src={similarSnake.image} 
+                alt={similarSnake.name}
+                className="w-full h-full object-cover rounded-lg shadow-lg shadow-slate-400"
+              />
+             
+             <div className="   bg-opacity-80  text-[#161616] p-2">
+                <p className="font-semibold">{similarSnake.name}</p>
+                <p>Venom Level: {similarSnake.venomusLevel}</p>
               </div>
 
-              <div className="md:w-3/12 w-1/2 lg:w-2/12 relative rounded-md">
-                <img
-                  src={imageUrl}
-                  alt="uploadedimage"
-                  className="w-full object-cover rounded-lg shadow-lg shadow-slate-400"
-                />
-              </div>
             </div>
+            
+          ))}
+</div>
+            
 
 
 
