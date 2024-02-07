@@ -1,2 +1,2 @@
-/BackEnd/prediction/serpify/Lib/
-/BackEnd/prediction/serpify/pythonenv
+/Back_End/prediction/serpify/Lib/
+/Back_End/prediction/serpify/pythonenv
