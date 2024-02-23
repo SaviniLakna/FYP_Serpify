@@ -23,6 +23,14 @@ const [snakeId, setSnakeId] = useState(null);
 
 
 
+const videoConstraints = {
+  width: 420,
+  height: 420,
+  facingMode: "environment", // use the back camera
+};
+
+
+
 const handleCaptureImage = async () => {
   const imageSrc = webcamRef.current.getScreenshot();
   
@@ -82,6 +90,7 @@ const handleCaptureImage = async () => {
           ref={webcamRef}
           audio={false}
           screenshotFormat="image/png"
+          videoConstraints={videoConstraints}
         />
       </div>
 
