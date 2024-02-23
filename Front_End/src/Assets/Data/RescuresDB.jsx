@@ -67,6 +67,108 @@ const RescuresDB = [
         district:'Anuradhapura',
         coveringArea:'NOCHCHIYAGAMA, RAJANGANAYA, THABUTHTHEGAMA'
     },
+    {
+        name:'MR.SUPUN LAKSHAN',
+        contact:'0701695612, 0759446567',
+        district:'Badulla',
+        coveringArea:'BANDARAWELA, BADULLA, WALIMADA, HAPUTHALE, DIYATHALAWA (TRANSPRTATION REQUIRED)'
+    },
+    {
+        name:'MR.KAVISHA PRABHATH',
+        contact:'0769440767',
+        district:'Badulla',
+        coveringArea:'BADULLA, HALIELA, DEMODARA, UDUVARA, DEKE KANNUWA, THUNE KANNUWA, PASSARA, TALDENA, MEEGAHAKIVULA, SORANATHOTA, KANDAKETIYA (TRANSPRTATION REQUIRED)'
+    },
+    {
+        name:'MR.CHATHURA UDAYNAGA',
+        contact:'0772533523',
+        district:'Badulla',
+        coveringArea:'BADULLA, PASSARA, HALIELA'
+    },
+    {
+        name:'DEPARTMENT OF WILDLIFE CONSERVATION',
+        contact:'1992',
+        district:'Badulla',
+        coveringArea:'BADULLA DISTRICT'
+    },
+    {
+        name:'DEPARTMENT OF WILDLIFE CONSERVATION',
+        contact:'1992',
+        district:'Batticaloa',
+        coveringArea:'BATTICALOA DISTRIC'
+    },
+    {
+        name:'MR.JEETHENDRA LIYANAGE',
+        contact:'0777837529, 0112829891',
+        district:'Colombo',
+        coveringArea:'BATTARAMULLA, BELLANWILA, BORALESGAMUWA, COLOMBO 4-8, DEHIWALA, JUBILEE POST, KOSWATTA-BATTARAMULLA, KOSWATTA-NAWALA, KOTTE, MAHARAGAMA, NARAHENPITA, NAWALA, NUGEGODA, PANNIPITIYA, PELAWATTA, SRI JAYAWARDENEPURA, THALAWATHUGODA'
+    },
+    {
+        name:'MISS.MELUSHA PADMIKA',
+        contact:'0777685135',
+        district:'Colombo',
+        coveringArea:'COLOMBO AREA'
+    },
+    {
+        name:'MR.SUJEEWA CHANDANA',
+        contact:'0710688894',
+        district:'Colombo',
+        coveringArea:'HOMAGAMA, GODAGAMA, MEEGODA, HANWELLA'
+    },
+    {
+        name:'MR.KASUN DILRANGA',
+        contact:'0762357739',
+        district:'Colombo',
+        coveringArea:'KALUAGGALA, AWISSAWELLA, LABUGAMA, HOMAGAMA, MEEPE AREA'
+    },
+    {
+        name:'MR.SASIDHU ANUSHKA',
+        contact:'0776549013',
+        district:'Colombo',
+        coveringArea:'COLOMBO AREA, MIRIHANA, NUGEGODA, KOTTAWA, MAHARAGAMA, BATHTHARAMULLA'
+    },
+    {
+        name:'MR.LAKSHAN MADUSANKA',
+        contact:'0767080074, 0755431779',
+        district:'Colombo',
+        coveringArea:'RATHMALANA, MORATUWA, ATHTHIDIYA, BORUPANA, BORALASGAMUWA, NUGEGODA, NAWALA, PILIYANDALA'
+    },
+    {
+        name:'MR.SAMPATH GOVINNA',
+        contact:'0770858833, 0789005139, 0758425459',
+        district:'Colombo',
+        coveringArea:'ATHURUGIRIYA, HABARAKADA, MALABE, KOTTAWA, BATHTHARAMULLA'
+    },
+    {
+        name:'MR.THISARA WIJESINGHA',
+        contact:'0782748108',
+        district:'Colombo',
+        coveringArea:'PILIYANDALA, MAHARAGAMA, BORALASGAMUWA, MATHTHEGODA, PANNIPITIYA, KOTTE, THALAWATHUGODA, HOKANDARA'
+    },
+    {
+        name:'MR.KASUN CHATHURANGA',
+        contact:'0711214583',
+        district:'Colombo',
+        coveringArea:'ATHURUGIRIYA, MALABE, BATHTHARAMULLA, HANWALLA'
+    },
+    {
+        name:'MR.DASUN SAMEERA',
+        contact:'0718894415',
+        district:'Colombo',
+        coveringArea:'ATHURUGIRIYA, KADUWELA, NAWAGAMUWA'
+    },
+    {
+        name:'MR.MADUSHAN KOKILA',
+        contact:'0764105771',
+        district:'Galle',
+        coveringArea:'GALLA, GINTHOTA, BUSSA, DHADALLA, MAHAMODARA, RATHGAMA, HIKKADUWA, LABUDUUWA, KARAPITIYA'
+    },
+    {
+        name:'MR.SUJEEWA WIRAKKODI',
+        contact:'0768658036, 0784509555',
+        district:'Galle',
+        coveringArea:'NELUWA, PAMANKADA, KOSWATHTHA'
+    },
 ]
 
 export default RescuresDB;
