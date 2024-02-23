@@ -52,7 +52,8 @@ def preprocess_image(file):
 
 
 # CORS configuration for specific routes
-cors = CORS(app, resources={r"/predict": {"origins": "http://192.168.8.195:3000"}})
+# cors = CORS(app, resources={r"/predict": {"origins": "http://192.168.8.195:3000"}})
+CORS(app, resources={r"/*": {"origins": "https://fyp-serpify.vercel.app/"}})
 
 
 @app.route('/predict', methods=['POST'])
