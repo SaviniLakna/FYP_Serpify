@@ -14,26 +14,148 @@ function PredictResult() {
   const [imageUrl, setImageUrl] = useState(null);
   const [snakeData, setSnakeData] = useState(null);
 
+  // useEffect(() => {
+  //   const foundSnakeData = SnakeDB.find((snake) => snake.snakeID === snakeId);
+
+  //   if (foundSnakeData) {
+  //     setSnakeData(foundSnakeData);
+
+  //     // Convert base64 string to Blob
+  //     const byteCharacters = atob(file.split(",")[1]);
+  //     const byteNumbers = new Array(byteCharacters.length);
+
+  //     for (let i = 0; i < byteCharacters.length; i++) {
+  //       byteNumbers[i] = byteCharacters.charCodeAt(i);
+  //     }
+
+  //     const byteArray = new Uint8Array(byteNumbers);
+  //     const blob = new Blob([byteArray], { type: "image/jpeg" });
+
+  //     const imageUrl = URL.createObjectURL(blob);
+  //     setImageUrl(imageUrl);
+
+  //     return () => URL.revokeObjectURL(imageUrl);
+  //   }
+  // }, [snakeId, file]);
+
+
+  // useEffect(() => {
+  //   const foundSnakeData = SnakeDB.find((snake) => snake.snakeID === snakeId);
+  
+  //   if (foundSnakeData) {
+  //     setSnakeData(foundSnakeData);
+  
+  //     // Directly use the file variable
+  //     const byteCharacters = atob(file.split(',')[1]);
+  //     const byteNumbers = new Array(byteCharacters.length);
+  
+  //     for (let i = 0; i < byteCharacters.length; i++) {
+  //       byteNumbers[i] = byteCharacters.charCodeAt(i);
+  //     }
+  
+  //     const byteArray = new Uint8Array(byteNumbers);
+  //     const blob = new Blob([byteArray], { type: 'image/jpeg' });
+  
+  //     const imageUrl = URL.createObjectURL(blob);
+  //     setImageUrl(imageUrl);
+  
+  //     return () => URL.revokeObjectURL(imageUrl);
+  //   }
+  // }, [snakeId, file]);
+
+
+
+
+  // useEffect(() => {
+  //   const foundSnakeData = SnakeDB.find((snake) => snake.snakeID === snakeId);
+  
+  //   if (foundSnakeData) {
+  //     setSnakeData(foundSnakeData);
+  
+  //     // Create a FileReader object
+  //     const reader = new FileReader();
+  
+  //     // Define a callback function that will run when the file is read
+  //     reader.onload = function () {
+  //       // Get the file data as a string
+  //       const fileData = reader.result;
+  
+  //       // Split the file data by comma
+  //       const byteCharacters = atob(fileData.split(',')[1]);
+  //       const byteNumbers = new Array(byteCharacters.length);
+  
+  //       for (let i = 0; i < byteCharacters.length; i++) {
+  //         byteNumbers[i] = byteCharacters.charCodeAt(i);
+  //       }
+  
+  //       const byteArray = new Uint8Array(byteNumbers);
+  //       const blob = new Blob([byteArray], { type: 'image/jpeg' });
+  
+  //       const imageUrl = URL.createObjectURL(blob);
+  //       setImageUrl(imageUrl);
+  
+  //       return () => URL.revokeObjectURL(imageUrl);
+  //     };
+  
+  //     // Read the file as a data URL
+  //     reader.readAsDataURL(file);
+  //   }
+  // }, [snakeId, file]);
+
+
+
+
   useEffect(() => {
     const foundSnakeData = SnakeDB.find((snake) => snake.snakeID === snakeId);
-
+  
     if (foundSnakeData) {
       setSnakeData(foundSnakeData);
-
-      const imageUrl = URL.createObjectURL(file);
-      setImageUrl(imageUrl);
-
-      return () => URL.revokeObjectURL(imageUrl);
+  
+      // Try the first method (splitting the Data URL)
+      try {
+        const byteCharacters = atob(file.split(',')[1]);
+        const byteNumbers = new Array(byteCharacters.length);
+  
+        for (let i = 0; i < byteCharacters.length; i++) {
+          byteNumbers[i] = byteCharacters.charCodeAt(i);
+        }
+  
+        const byteArray = new Uint8Array(byteNumbers);
+        const blob = new Blob([byteArray], { type: 'image/jpeg' });
+  
+        const imageUrl = URL.createObjectURL(blob);
+        setImageUrl(imageUrl);
+  
+        return () => URL.revokeObjectURL(imageUrl);
+      } catch (error) {
+        console.error("Failed to split Data URL. Trying FileReader method.", error);
+      }
+  
+      // If the first method fails, use the second method (FileReader)
+      const reader = new FileReader();
+      reader.onload = function () {
+        const fileData = reader.result;
+        const byteCharacters = atob(fileData.split(',')[1]);
+        const byteNumbers = new Array(byteCharacters.length);
+  
+        for (let i = 0; i < byteCharacters.length; i++) {
+          byteNumbers[i] = byteCharacters.charCodeAt(i);
+        }
+  
+        const byteArray = new Uint8Array(byteNumbers);
+        const blob = new Blob([byteArray], { type: 'image/jpeg' });
+  
+        const imageUrl = URL.createObjectURL(blob);
+        setImageUrl(imageUrl);
+  
+        return () => URL.revokeObjectURL(imageUrl);
+      };
+  
+      reader.readAsDataURL(file);
     }
-  }, [snakeData, file]);
-
-  if (!snakeData) {
-    return <div>Loading...</div>;
-  }
-
+  }, [snakeId, file]);
 
   
-
 
   return (
     <div className="w-full h-screen">
@@ -55,7 +177,7 @@ function PredictResult() {
           <h5> Home </h5> <NavigateNext /> <h5>Predict Result</h5>
         </div>
 
-        <div className="md:w-[80%] w-[95%] mx-auto mt-[68px]">
+        {/* <div className="md:w-[80%] w-[95%] mx-auto mt-[68px]">
           <div className="w-full flex md:flex-row flex-col ">
             <div className="flex flex-col space-y-3 md:w-1/3 w-full border-r-[1px] border-[#565656] border-opacity-10 ">
               <h4 className="text-[16px] font-semibold">Uploaded Image</h4>
@@ -84,7 +206,7 @@ function PredictResult() {
             <h2> Similar Ones </h2>
 
 <div className="flex flex-wrap justify-center mx-auto ">
-{snakeData.similarOnes.map((similarSnake, index) => (
+{snakeData && snakeData.similarOnes && snakeData.similarOnes.map((similarSnake, index) => (
            
             <div
               key={index}
@@ -110,6 +232,65 @@ function PredictResult() {
 
 
           </div>
+        </div> */}
+
+        <div className="md:w-[80%] w-[95%] mx-auto mt-[68px]">
+          {snakeData && (
+            <>
+              <div className="w-full flex md:flex-row flex-col ">
+                <div className="flex flex-col space-y-3 md:w-1/3 w-full border-r-[1px] border-[#565656] border-opacity-10 ">
+                  <h4 className="text-[16px] font-semibold">Uploaded Image</h4>
+
+                  {imageUrl && (
+                    <div className="md:w-[200px] lg:w-[300px] md:h-auto relative">
+                      <img
+                        src={imageUrl}
+                        alt="uploadedimage"
+                        className="w-full object-cover rounded-lg shadow-lg shadow-slate-400"
+                      />
+                    </div>
+                  )}
+                </div>
+
+                <div className="flex flex-col space-y-3 md:w-2/3 w-full justify-start px-5 mt-5 md:mt-0">
+                  <h4 className="text-[16px] font-semibold">
+                    Prediction Result
+                  </h4>
+
+                  {/* Additional checks for snakeData */}
+                  {snakeData.englishName && (
+                    <FullWidthTabs snakeIdentifiedData={snakeData} />
+                  )}
+                </div>
+              </div>
+
+              <div className=" w-100 mt-[56px] ">
+                <h2> Similar Ones </h2>
+
+                <div className="flex flex-wrap justify-center mx-auto ">
+                  {snakeData &&
+                    snakeData.similarOnes &&
+                    snakeData.similarOnes.map((similarSnake, index) => (
+                      <div
+                        key={index}
+                        className="md:w-3/12 w-1/2 lg:w-2/12 relative rounded-md p-2 flex flex-col  "
+                      >
+                        <img
+                          src={similarSnake.image}
+                          alt={similarSnake.name}
+                          className="w-full h-full object-cover rounded-lg shadow-lg shadow-slate-400"
+                        />
+
+                        <div className="   bg-opacity-80  text-[#161616] p-2">
+                          <p className="font-semibold">{similarSnake.name}</p>
+                          <p>Venom Level: {similarSnake.venomusLevel}</p>
+                        </div>
+                      </div>
+                    ))}
+                </div>
+              </div>
+            </>
+          )}
         </div>
       </div>
 

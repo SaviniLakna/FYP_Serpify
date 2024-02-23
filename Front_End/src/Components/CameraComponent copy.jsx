@@ -22,51 +22,57 @@ const navigate = useNavigate();
 const [snakeId, setSnakeId] = useState(null);
 
 
-
 const handleCaptureImage = async () => {
-  const imageSrc = webcamRef.current.getScreenshot();
-  
-  // Convert base64 image to Blob
-  const byteCharacters = atob(imageSrc.split(',')[1]);
-  const byteNumbers = new Array(byteCharacters.length);
-  
-  for (let i = 0; i < byteCharacters.length; i++) {
-    byteNumbers[i] = byteCharacters.charCodeAt(i);
-  }
-  
-  const byteArray = new Uint8Array(byteNumbers);
-  const blob = new Blob([byteArray], { type: 'image/jpeg' });
+  if (webcamRef.current) {
+    const screenshot = webcamRef.current.getScreenshot();
+    const formData = new FormData();
 
-  // Create a FormData object and append the image blob to it
-  const formData = new FormData();
-  formData.append('file', blob, 'captured_image.jpg');
+    // Create a Blob from the base64 data
+    const blob = dataURItoBlob(screenshot);
+    
+    // Append the Blob as a file to the FormData
+    formData.append("file", blob, "captured_image.png");
 
-  // Make a POST request to the Flask server for prediction
-  try {
-    const response = await fetch('http://localhost:5000/predict', {
-      method: 'POST',
-      body: formData,
-    });
+    try {
+      const response = await fetch("http://localhost:5000/predict", {
+        method: "POST",
+        body: formData,
+      });
 
-    if (response.ok) {
+      if (!response.ok) {
+        throw new Error("Prediction failed");
+      }
+
       const result = await response.json();
-      // Handle the prediction result as needed
-      console.log('Prediction Result:', result);
+      console.log("Snake id:", result.prediction);
 
-     // Assuming setSnakeId and navigate functions are defined
-     setSnakeId(result.prediction);
-     navigate(`/PredictResult/${result.prediction}`, {
-       state: { file: imageSrc },
-     });
-    } else {
-      console.error('Prediction failed:', response.statusText);
+      // Assuming setSnakeId and navigate functions are defined
+      setSnakeId(result.prediction);
+      navigate(`/PredictResult/${result.prediction}`, {
+        state: { file: screenshot },
+      });
+    } catch (error) {
+      console.error("Error:", error.message);
     }
-  } catch (error) {
-    console.error('Error during prediction:', error);
   }
 };
 
+function dataURItoBlob(dataURI) {
+  // Split the data URI to get the mime type and data
+  const [type, data] = dataURI.split(',');
 
+  // Convert base64 data to a Uint8Array
+  const byteCharacters = atob(data);
+  const byteNumbers = new Array(byteCharacters.length);
+  for (let i = 0; i < byteCharacters.length; i++) {
+    byteNumbers[i] = byteCharacters.charCodeAt(i);
+  }
+  const byteArray = new Uint8Array(byteNumbers);
+
+  // Create a Blob using the Uint8Array and mime type
+  const blob = new Blob([byteArray], { type: type.split(':')[1].split(';')[0] });
+  return blob;
+}
 
   return (
     <div className="justify-center items-center">
