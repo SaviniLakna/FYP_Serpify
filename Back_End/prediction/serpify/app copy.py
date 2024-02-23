@@ -49,12 +49,6 @@ def preprocess_image(file):
     img /= 255.0
     return img
 
-
-
-# CORS configuration for specific routes
-cors = CORS(app, resources={r"/predict": {"origins": "http://192.168.8.195:3000"}})
-
-
 @app.route('/predict', methods=['POST'])
 def predict():
     try:
@@ -103,4 +97,4 @@ def save_image():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, host='192.168.8.195', port=5000)
+    app.run(debug=True)
