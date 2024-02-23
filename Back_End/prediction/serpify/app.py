@@ -104,6 +104,7 @@ import io
 import os  # Add this line
 import base64  # Add this line
 from flask_cors import CORS
+from flask import send_file
 
 app = Flask(__name__)
 CORS(app)
@@ -163,24 +164,6 @@ def predict():
     except Exception as e:
         return jsonify({"error": "Prediction failed", "message": str(e)})
 
-# @app.route('/save-image', methods=['POST'])
-# def save_image():
-#     try:
-#         data = request.get_json()
-#         screenshot = data.get('image')
-
-#         # Save the image to a specific folder on the server
-#         save_path = './Include/captured'
-#         os.makedirs(save_path, exist_ok=True)
-
-#         with open(os.path.join(save_path, 'captured_image.png'), 'wb') as f:
-#             f.write(base64.b64decode(screenshot.split(',')[1]))
-
-#         return jsonify({"message": "Image saved successfully"})
-#     except Exception as e:
-#         return jsonify({"error": "Failed to save image", "message": str(e)})
-
-
 
 @app.route('/save-image', methods=['POST'])
 def save_image():
@@ -202,7 +185,11 @@ def save_image():
     except Exception as e:
         return jsonify({"error": "Failed to save image", "message": str(e)})
     
-    
+
+
+
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)
