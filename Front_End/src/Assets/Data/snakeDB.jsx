@@ -5,8 +5,7 @@ import Malradanakaya from "../Images/similarSnakes/Malradanakaya.jpg"
 import Mudukarawala from "../Images/similarSnakes/Mudukarawala.jpeg"
 
 const SnakeDB = [
-    {
-        snakeID : "Thelkarawala",
+    {   snakeID : "Thelkarawala",
         sinhalaName : "තෙල්කරවලා",
         tamilName : "තෙල්කරවලා",
         engName : "තෙල්කරවලා",
@@ -63,8 +62,7 @@ const SnakeDB = [
 
 
     },
-    {
-        snakeID : "Naya",
+    {   snakeID : "Naya",
         sinhalaName : "තෙල්කරවලා",
         tamilName : "තෙල්කරවලා",
         engName : "තෙල්කරවලා",

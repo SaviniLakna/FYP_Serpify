@@ -15,7 +15,7 @@ app = Flask(__name__)
 CORS(app)
 
 # Load the trained model
-model_path = './Include/serpifymodel.h5'
+model_path = './Include/NasNetmodel.h5'
 model = load_model(model_path)
 
 # Map class indices to class names
@@ -52,8 +52,7 @@ def preprocess_image(file):
 
 
 # CORS configuration for specific routes
-# cors = CORS(app, resources={r"/predict": {"origins": "http://192.168.8.195:3000"}})
-CORS(app, resources={r"/*": {"origins": "https://fyp-serpify.vercel.app/"}})
+cors = CORS(app, resources={r"/predict": {"origins": "http://192.168.8.195:3000"}})
 
 
 @app.route('/predict', methods=['POST'])
