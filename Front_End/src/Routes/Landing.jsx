@@ -52,7 +52,7 @@ function Landing() {
     formData.append("file", file);
 
     try {
-      const response = await fetch("http://192.168.8.195:5000/predict", {
+      const response = await fetch("http://localhost:5000/predict", {
         method: "POST",
         body: formData,
       });
