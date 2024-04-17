@@ -13,7 +13,7 @@ const Libraries = ['places'];
 
 const Hospitals = () => {
   const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: 'AIzaSyC4dg11NsnS2z2RNfe_-h9CAESDVnRriSo',
+    googleMapsApiKey: "AIzaSyBjB-vFl5lG3Sl6oulPnEwcSbO6Hvv0ncE",
     libraries: Libraries,
   });
 

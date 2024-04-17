@@ -23,25 +23,25 @@ function Landing() {
     {
       title: "Snake Identification",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, explicabo!",
+        "Capture a photo of any snake, and serpify will identify  Whether it’s a harmless garden snake or a venomous viper.",
       wwdicon: Snake,
     },
     {
       title: "Rescuer details",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, explicabo!",
+        "Access a network of trained snake rescuers. Need help? find local experts who can safely handle snake encounters.",
       wwdicon: Rescure,
     },
     {
       title: "Provide First Aid ",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, explicabo!",
+        "Step-by-step instructions on administering first aid for snakebites. Stay calm, follow the guide, and protect yourself or others.",
       wwdicon: Heart,
     },
     {
       title: "Nearest Hospitals ",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, explicabo!",
+        "Locate the nearest hospitals equipped to handle snakebite cases. Time matters, find the right medical facility in seconds.",
       wwdicon: Hospital,
     },
   ];
@@ -52,7 +52,7 @@ function Landing() {
     formData.append("file", file);
 
     try {
-      const response = await fetch("http://192.168.8.195:5000/predict", {
+      const response = await fetch("http://localhost:5000/predict", {
         method: "POST",
         body: formData,
       });
@@ -87,9 +87,9 @@ function Landing() {
                 <span className="text-[#8EA604]">Identify Snakes</span> Around
                 You Within A Minute
               </h2>
-              <p className="text-[14px] font-light text-white italic">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Et,
-                adipisci.
+              <p className="text-[14px] font-bold text-[#C3D898] italic">
+                Snap a photo to Identify, Learn, and Explore Snake Species with
+                Serpify.
               </p>
 
               <div className="flex flex-col mt-5 space-y-3 justify-center items-center">
@@ -113,7 +113,7 @@ function Landing() {
                 </div>
 
                 <div className="mt-3">
-                  <CameraCaptureButton/>
+                  <CameraCaptureButton />
                 </div>
               </div>
             </div>

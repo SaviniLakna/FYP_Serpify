@@ -132,31 +132,25 @@ export default function FullWidthTabs(props: FullWidthTabsProps) {
             </tr>
             <tr>
               <td className="w-2/12 py-2 border-b-[1px] border-r-[1px] border-[#565656] border-opacity-10">
-                Description
+                Characteristics
               </td>
               <td className="w-10/12 py-2 border-b-[1px] border-[#565656] border-opacity-10 px-2">
-                {props.snakeIdentifiedData.engdescription.map(
-                  (list, index) => (
-                    <li>{list}</li>
-                  )
-                )}
+                {props.snakeIdentifiedData.engdescription.map((list, index) => (
+                  <li>{list}</li>
+                ))}
               </td>
             </tr>
             <tr>
               <td className="w-2/12 py-2 border-b-[1px] border-r-[1px] border-[#565656] border-opacity-10">
-             Local Names
+                Local Names
               </td>
               <td className="w-10/12 py-2 border-b-[1px] border-[#565656] border-opacity-10 px-2">
-                {props.snakeIdentifiedData.localnames.map(
-                  (list, index) => (
-                    <li>{list}</li>
-                  )
-                )}
+                {props.snakeIdentifiedData.localnames.map((list, index) => (
+                  <li>{list}</li>
+                ))}
               </td>
             </tr>
-
           </table>
-
         </PredictionResultTab>
 
         <PredictionResultTab
@@ -196,17 +190,14 @@ export default function FullWidthTabs(props: FullWidthTabsProps) {
             </tr>
             <tr>
               <td className="w-2/12 py-2 border-b-[1px] border-r-[1px] border-[#565656] border-opacity-10">
-              වෙනත් නම් 
+                වෙනත් නම්
               </td>
               <td className="w-10/12 py-2 border-b-[1px] border-[#565656] border-opacity-10 px-2">
-                {props.snakeIdentifiedData.localnames.map(
-                  (list, index) => (
-                    <li>{list}</li>
-                  )
-                )}
+                {props.snakeIdentifiedData.localnames.map((list, index) => (
+                  <li>{list}</li>
+                ))}
               </td>
             </tr>
-
           </table>
         </PredictionResultTab>
 
@@ -216,7 +207,44 @@ export default function FullWidthTabs(props: FullWidthTabsProps) {
           dir={theme.direction}
           snakeData={props.snakeIdentifiedData}
         >
-          Tamil data values of identified snakeID
+          <table className="w-full">
+            <tr>
+              <td className="w-2/12 py-2 border-b-[1px] border-r-[1px] border-[#565656] border-opacity-10 ">
+                பெயர்
+              </td>
+              <td className="w-10/12 py-2 border-b-[1px] border-[#565656] border-opacity-10 px-2">
+                {props.snakeIdentifiedData.tamilName}
+              </td>
+            </tr>
+            <tr>
+              <td className="w-2/12 py-2 border-b-[1px] border-r-[1px] border-[#565656] border-opacity-10">
+                விஷ நிலை
+              </td>
+              <td className="w-10/12 py-2 border-b-[1px] border-[#565656] border-opacity-10 px-2">
+                {props.snakeIdentifiedData.venomusLeveltam}
+              </td>
+            </tr>
+            <tr>
+              <td className="w-2/12 py-2 border-b-[1px] border-r-[1px] border-[#565656] border-opacity-10">
+                பண்புகள்
+              </td>
+              <td className="w-10/12 py-2 border-b-[1px] border-[#565656] border-opacity-10 px-2">
+                {props.snakeIdentifiedData.tamdescription.map((list, index) => (
+                  <li>{list}</li>
+                ))}
+              </td>
+            </tr>
+            <tr>
+              <td className="w-2/12 py-2 border-b-[1px] border-r-[1px] border-[#565656] border-opacity-10">
+                மற்ற பெயர்கள்
+              </td>
+              <td className="w-10/12 py-2 border-b-[1px] border-[#565656] border-opacity-10 px-2">
+                {props.snakeIdentifiedData.localnames.map((list, index) => (
+                  <li>{list}</li>
+                ))}
+              </td>
+            </tr>
+          </table>
         </PredictionResultTab>
       </SwipeableViews>
     </Box>

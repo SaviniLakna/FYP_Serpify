@@ -91,10 +91,11 @@ function Nav() {
             </li>
             </Link>
           </ul>
-
+          <Link to="/">
           <button className="lg:w-[128px] rounded-full bg-gradient-to-r from-[#2C6E49] to-[#8EA604] text-white text-[14px] font-semibold uppercase px-4 py-2 ">
             Try Now
-          </button>
+            </button>
+          </Link>
         </div>
         <div className="md:hidden flex justify-center items-center w-1/4 ">
           <button

@@ -1,5 +1,4 @@
 Back_End/prediction/serpify/Lib/
 Back_End/prediction/serpify/pythonenv
-Back_End/prediction/serpify/include/serpifymodel.h5
-Back_End/prediction/serpify/include/NasNetmodel.h5
-Back_End/prediction/serpify/include/model.h5
+Back_End/prediction/serpify/include/SerpifyModel.h5
+Back_End/serpifyenv/Lib/site-packages

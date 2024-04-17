@@ -1,123 +1,674 @@
-import React from 'react'
-import Aluradanakaya from "../Images/similarSnakes/Aluradanakaya.jpg"
-import Gataradanakaya from "../Images/similarSnakes/Gataradanakaya.jpg"
-import Malradanakaya from "../Images/similarSnakes/Malradanakaya.jpg"
-import Mudukarawala from "../Images/similarSnakes/Mudukarawala.jpeg"
+import React from "react";
+import Aluradanakaya from "../Images/similarSnakes/Aluradanakaya.jpg";
+import Gataradanakaya from "../Images/similarSnakes/Gataradanakaya.jpg";
+import Malradanakaya from "../Images/similarSnakes/Malradanakaya.jpg";
+import Mudukarawala from "../Images/similarSnakes/Mudukarawala.jpg";
+import Garadiya from "../Images/similarSnakes/Garandiya.jpg";
+import Thelkarawala from "../Images/similarSnakes/Thelkarawal.jpeg";
+import Naya from "../Images/similarSnakes/Naya.jpg";
+import Aharakukka from "../Images/similarSnakes/Aharakukka.jpg";
+import Dangaradanda from "../Images/similarSnakes/Dangaradanda.jpeg";
+import Depathnaya from "../Images/similarSnakes/Depathnaya.jpg";
+import Paduruhaldanda from "../Images/similarSnakes/Paduruhaldanda.jpg";
+import Thithpolanga from "../Images/similarSnakes/Thithpolanga.jpg";
+import Wairihaldanada from "../Images/similarSnakes/Wairihaldanada.jpg";
+import Pimbura from "../Images/similarSnakes/Pimbura.jpg";
+import NotApplicable from "../Images/similarSnakes/NA.jpg";
 
 const SnakeDB = [
-    {   snakeID : "Thelkarawala",
-        sinhalaName : "තෙල්කරවලා",
-        tamilName : "තෙල්කරවලා",
-        engName : "තෙල්කරවලා",
-        venomusLevelsinhala : "උග්‍ර විෂ",
-        venomusLeveleng : "High",
-        venomusLeveltam : "උග්‍ර විෂ",
-        englishName : "Common krait",
-        localnames : [
-            "Thel karawala", "Magamaruwa", "Habaralaya", "Mavilla"
-        ],
-        scienteficName : "Bungarus caeruleus",
-        engdescription: [
-            "Size of 25cm - 140cm",
-            "Large hexagonal shaped scales running down its spine",
-            "Black glossy snake with a white belly",
-            "Narrow white paired rings fade with age"
-        ],
-        sinhaladescription: [
-            "Size of 25cm - 140cm",
-            "Large hexagonal shaped scales running down its spine",
-            "Black glossy snake with a white belly",
-            "Narrow white paired rings fade with age"
-        ],
-        tamdescription: [
-            "Size of 25cm - 140cm",
-            "Large hexagonal shaped scales running down its spine",
-            "Black glossy snake with a white belly",
-            "Narrow white paired rings fade with age"
-        ],
-        similarOnes :[
-            {
-                name : "Mudukarawala",
-           
-                venomusLevel: "highly venomous",
-                image: Mudukarawala,
-            },
-            {
-                name : "Aluradanakaya",
-               
-                image: Aluradanakaya,
-                venomusLevel: "Non venomous",
-            },
-            {
-                name : "Malradanakaya",
-                image: Malradanakaya,
-                venomusLevel: "Non venomous",
-            },
-            {
-                name : "Gataradanakaya",
-                image: Gataradanakaya,
-                venomusLevel: "Non venomous",
-            }
-        ]
-
-
-    },
-    {   snakeID : "Naya",
-        sinhalaName : "තෙල්කරවලා",
-        tamilName : "තෙල්කරවලා",
-        engName : "තෙල්කරවලා",
-        venomusLevelsinhala : "උග්‍ර විෂ",
-        venomusLeveleng : "උග්‍ර විෂ",
-        venomusLeveltam : "උග්‍ර විෂ",
-        englishName : "Common krait",
-        localnames : [
-            "Thel karawala", "Magamaruwa", "Habaralaya", "Mavilla"
-        ],
-        scienteficName : "Bungarus caeruleus",
-        engdescription: [
-            "Size of 25cm - 140cm",
-            "Large hexagonal shaped scales running down its spine",
-            "Black glossy snake with a white belly",
-            "Narrow white paired rings fade with age"
-        ],
-        sinhaladescription: [
-            "Size of 25cm - 140cm",
-            "Large hexagonal shaped scales running down its spine",
-            "Black glossy snake with a white belly",
-            "Narrow white paired rings fade with age"
-        ],
-        tamdescription: [
-            "Size of 25cm - 140cm",
-            "Large hexagonal shaped scales running down its spine",
-            "Black glossy snake with a white belly",
-            "Narrow white paired rings fade with age"
-        ],
-        similarOnes :[
-            {
-                name : "Mudukarawala",
-                image: Mudukarawala,
-                venomusLevel: "highly venomous",
-            },
-            {
-                name : "Aluradanakaya",
-                image: Aluradanakaya,
-                venomusLevel: "Non venomous",
-            },
-            {
-                name : "Malradanakaya",
-                image: Malradanakaya,
-                venomusLevel: "Non venomous",
-            },
-            {
-                name : "Gataradanakaya",
-                image: Gataradanakaya,
-                venomusLevel: "Non venomous",
-            }
-        ]
-
-
-    },
-
-
-]
-export default SnakeDB
+  {
+    snakeID: "Thelkarawala",
+    sinhalaName: "තෙල්කරවලා",
+    tamilName: "கட்டுவரியன்",
+    engName: "Common krait",
+    venomusLevelsinhala: "උග්‍ර විෂ",
+    venomusLeveleng: "Highly venomous",
+    venomusLeveltam: "மிகவும் தீங்கு விளைவிக்கும்",
+    englishName: "Common krait",
+    localnames: ["Thel karawala", "Magamaruwa", "Habaralaya", "Mavilla"],
+    scienteficName: "Bungarus caeruleus",
+    engdescription: [
+      "Size of 25cm - 140cm",
+      "Large hexagonal shaped scales running down its spine",
+      "Black glossy snake with a white belly",
+      "Narrow white paired rings fade with age",
+    ],
+    sinhaladescription: [
+      "විශාලත්වය 25cm - 140cm",
+      "එහි කොඳු ඇට පෙළ දිගේ දිවෙන විශාල ෂඩාස්‍රාකාර හැඩැති කොරපොතු",
+      "සුදු බඩක් සහිත කළු දිලිසෙන සර්පයා",
+      "පටු සුදු යුගල මුදු වයස සමඟ මැකී යයි",
+    ],
+    tamdescription: [
+      "25cm - 140cm அளவு",
+      "பெரிய அறுகோண வடிவ செதில்கள் அதன் முதுகெலும்புக்கு கீழே ஓடுகின்றன",
+      "வெள்ளை தொப்பையுடன் கூடிய கருப்பு பளபளப்பான பாம்பு",
+      "குறுகிய வெள்ளை ஜோடி வளையங்கள் வயதுக்கு ஏற்ப மங்கிவிடும்",
+    ],
+    similarOnes: [
+      {
+        name: " මුදු කරවලා / Sri Lankan krait / ஏத்தடி விரியன்",
+        image: Mudukarawala,
+        venomusLevel: "highly venomous",
+      },
+      {
+        name: "අලු රදනකයා / Common Wolf Snake / காவடியை ",
+        image: Aluradanakaya,
+        venomusLevel: "Non venomous",
+      },
+      {
+        name: "මල් රදනකයා / Flowery wolf snake / இந்திய ஓநாய் பாம்பு",
+        image: Malradanakaya,
+        venomusLevel: "Non venomous",
+      },
+      {
+        name: " ගැට රදනකයා / Common bridal snake / அலங்கார பாம்பு ",
+        image: Gataradanakaya,
+        venomusLevel: "Non venomous",
+      },
+    ],
+  },
+  {
+    snakeID: "Naya",
+    sinhalaName: "නයා",
+    tamilName: "நாக பாம்பு",
+    engName: "Cobra",
+    venomusLevelsinhala: "උග්‍ර විෂ",
+    venomusLeveleng: "Highly venomous",
+    venomusLeveltam: "மிகவும் தீங்கு விளைவிக்கும்",
+    englishName: "Cobra",
+    localnames: ["Naya", "Naygaya"],
+    scienteficName: "Naja naja",
+    engdescription: [
+      "Size of 30 cm- 150 cm",
+      "It has a hood with two black spots on the ventral (in front)",
+      "Has a ‘U’ shaped mark on the back of the hood",
+      "Oval head with ill-defined neck ",
+    ],
+    sinhaladescription: [
+      "විශාලත්වය 30 cm- 150 cm",
+      "එහි කශේරුකාව මත කළු ලප දෙකක් සහිත තොප්පියක් ඇත (ඉදිරිපස)",
+      "ආවරණයේ පිටුපස ‘U’ හැඩැති සලකුණක් ඇත",
+      "වැරදි ලෙස අර්ථ දක්වා ඇති බෙල්ල සහිත ඕවලාකාර හිස",
+    ],
+    tamdescription: [
+      "30 செமீ அளவு - 150 செ.மீ",
+      "இது வென்ட்ரலில் (முன்னால்) இரண்டு கருப்பு புள்ளிகள் கொண்ட ஒரு பேட்டை உள்ளது.",
+      "பேட்டையின் பின்புறத்தில் ‘U’ வடிவ அடையாளத்தைக் கொண்டுள்ளது",
+      "சரியாக வரையறுக்கப்படாத கழுத்துடன் ஓவல் தலை",
+    ],
+    similarOnes: [
+      {
+        name: "ගැරඬියා / Rat Snake / சாரைப்பாம்பு",
+        image: Garadiya,
+        venomusLevel: "Non venomous",
+      },
+      {
+        name: " දෙපත් නයා / Sri Lankan pipe snake / வதாவுல்லா",
+        image: Depathnaya,
+        venomusLevel: "Non venomous",
+      },
+    ],
+  },
+  {
+    snakeID: "Ahatulla",
+    sinhalaName: "ඇහැටුල්ලා",
+    tamilName: "பச்சிலை",
+    engName: "Green Vine snakes",
+    venomusLevelsinhala: "මද විෂ",
+    venomusLeveleng: "Mildly venomous",
+    venomusLeveltam: "லேசான விஷம்",
+    englishName: "Green Vine snakes",
+    localnames: ["Ahaetulla", "Asgulla"],
+    scienteficName: "Ahaetulla nasuta",
+    engdescription: [
+      "Size of 20 cm- 150 cm",
+      "Usually Green but can be yellow, brown and gray",
+      "Has a ‘U’ shaped mark on the back of the hood",
+      "Oval head with ill-defined neck ",
+    ],
+    sinhaladescription: [
+      "විශාලත්වය 20 cm- 150 cm",
+      "සාමාන්යයෙන් කොළ නමුත් කහ, දුඹුරු සහ අළු විය හැක",
+      "ආවරණයේ පිටුපස ‘U’ හැඩැති සලකුණක් ඇත",
+      "වැරදි ලෙස අර්ථ දක්වා ඇති බෙල්ල සහිත ඕවලාකාර හිස",
+    ],
+    tamdescription: [
+      "20 செமீ அளவு - 150 செ.மீ",
+      "பொதுவாக பச்சை ஆனால் மஞ்சள், பழுப்பு மற்றும் சாம்பல் நிறமாக இருக்கலாம்",
+      "பேட்டையின் பின்புறத்தில் ‘U’ வடிவ அடையாளத்தைக் கொண்டுள்ளது",
+      "சரியாக வரையறுக்கப்படாத கழுத்துடன் ஓவல் தலை",
+    ],
+    similarOnes: [
+      {
+        name: "No Similar Snakes",
+        image: NotApplicable,
+        venomusLevel: "N/A",
+      },
+    ],
+  },
+  {
+    snakeID: "Aluradanakaya",
+    sinhalaName: "අලු රදනකයා",
+    tamilName: "காவடியை",
+    engName: "Common Wolf Snake",
+    venomusLevelsinhala: "නිර්විෂ",
+    venomusLeveleng: "Non venomous",
+    venomusLeveltam: "விஷமற்றது",
+    englishName: "Common Wolf Snake",
+    localnames: ["Alu Radanakaya", "Alu Polanga"],
+    scienteficName: "Lycodon aulicus",
+    engdescription: [
+      "Size of 18 cm- 80 cm.",
+      "Back dark brown to blackish brown skin, with white cross bars.",
+      "These cross bars are highlighted at a young age and disappear or become reduced in adults. ",
+      "Lips are prominently white, while the ventral or underside is off-white.",
+    ],
+    sinhaladescription: [
+      "විශාලත්වය 18 cm- 80 cm.",
+      "මෙම හරස් තීරු කුඩා අවධියේදී උද්දීපනය වන අතර වැඩිහිටියන් තුළ අතුරුදහන් වී හෝ අඩු වේ.",
+      "මෙම හරස් තීරු කුඩා අවධියේදී උද්දීපනය වන අතර වැඩිහිටියන් තුළ අතුරුදහන් වී හෝ අඩු වේ.",
+      "තොල් කැපී පෙනෙන ලෙස සුදු වන අතර කශේරුකාව හෝ යටි පැත්ත සුදුමැලි වේ.",
+    ],
+    tamdescription: [
+      "18 செமீ அளவு - 80 செ.மீ.",
+      "பின்புறம் அடர் பழுப்பு முதல் கருப்பு கலந்த பழுப்பு தோல், வெள்ளை குறுக்கு கம்பிகளுடன்.",
+      "இந்த குறுக்கு பட்டைகள் இளம் வயதில் சிறப்பிக்கப்படுகின்றன மற்றும் பெரியவர்களில் மறைந்து அல்லது குறைக்கப்படுகின்றன.",
+      "உதடுகள் முக்கியமாக வெண்மையாக இருக்கும், அதே சமயம் வென்ட்ரல் அல்லது அடிப்பகுதி வெண்மையாக இருக்கும்.",
+    ],
+    similarOnes: [
+      {
+        name: " මුදු කරවලා / Sri Lankan krait / ஏத்தடி விரியன்",
+        image: Mudukarawala,
+        venomusLevel: "highly venomous",
+      },
+      {
+        name: "තෙල් කරවලා / Common krait / யென்னை பாம்பு ",
+        image: Thelkarawala,
+        venomusLevel: "highly venomous",
+      },
+      {
+        name: "මල් රදනකයා / Flowery wolf snake / இந்திய ஓநாய் பாம்பு",
+        image: Malradanakaya,
+        venomusLevel: "Non venomous",
+      },
+      {
+        name: " ගැට රදනකයා / Common bridal snake / அலங்கார பாம்பு ",
+        image: Gataradanakaya,
+        venomusLevel: "Non venomous",
+      },
+    ],
+  },
+  {
+    snakeID: "Aranidathkatiya",
+    sinhalaName: "අරණි දත් කැටියා",
+    tamilName: "பட்டை ஓலைப்பாம்பு",
+    engName: "Common Banded kukri snake",
+    venomusLevelsinhala: "නිර්විෂ",
+    venomusLeveleng: "Non venomous",
+    venomusLeveltam: "விஷமற்றது",
+    englishName: "Common Banded kukri snake",
+    localnames: ["Arani Dath Katiya"],
+    scienteficName: "Oligodon arnensis",
+    engdescription: [
+      "Size of 10 cm- 60 cm.",
+      "has a triangular head, dark eyes, and round pupils.",
+      "distinct arrowhead design on top of the head.",
+      "It has well-defined black crossbands on the brown colour skin. ",
+    ],
+    sinhaladescription: [
+      "10 cm - 60 cm ප්රමාණය.",
+      "ත්රිකෝණාකාර හිසක්, අඳුරු ඇස් සහ වටකුරු සිසුන් ඇත.",
+      "හිස මුදුනේ වෙනස් ඊතල නිර්මාණය.",
+      "පටු සුදු යුගල මුදු වයස සමඟ මැකී යයි",
+    ],
+    tamdescription: [
+      "10 செமீ அளவு - 60 செ.மீ.",
+      "ஒரு முக்கோண தலை, கருமையான கண்கள் மற்றும் வட்டமான மாணவர்களைக் கொண்டுள்ளது.",
+      "தலையின் மேல் தனித்துவமான அம்புக்குறி வடிவமைப்பு.",
+      "குறுகிய வெள்ளை ஜோடி வளையங்கள் வயதுக்கு ஏற்ப மங்கிவிடும்",
+    ],
+    similarOnes: [
+      {
+        name: "No Similar Snakes",
+        image: NotApplicable,
+        venomusLevel: "N/A",
+      },
+    ],
+  },
+  {
+    snakeID: "Kunakatuwa",
+    sinhalaName: "පොලොන් තෙලිස්සා",
+    tamilName: "கோபி விரியன்",
+    engName: "Merrem’s hump-nosed viper",
+    venomusLevelsinhala: "උග්‍ර විෂ",
+    venomusLeveleng: "Highly venomous",
+    venomusLeveltam: "மிகவும் தீங்கு விளைவிக்கும்",
+    englishName: "Merrem’s hump-nosed viper",
+    localnames: ["Polon Thelissa", "Kunakatuwa", "Gata Polanga"],
+    scienteficName: "Hypnale hypnale",
+    engdescription: [
+      "Size of 12 cm- 23 cm.",
+      "usually light brown with darker brown patches in the back.",
+      "Has an upturned snout.",
+      "Loreal pit between the eye and nostril on each side of the head.",
+    ],
+    sinhaladescription: [
+      "විශාලත්වය 12 cm- 23 cm.",
+      "පිටුපස තද දුඹුරු පැහැ ලප සහිත සාමාන්‍යයෙන් ලා දුඹුරු.",
+      "උඩුබැලි අතට හැරුණු නාසයක් ඇත.",
+      "හිසෙහි සෑම පැත්තකින්ම ඇස සහ නාස්පුඩු අතර Loreal කුහරය.",
+    ],
+    tamdescription: [
+      "12 செமீ அளவு - 23 செ.மீ.",
+      "பொதுவாக வெளிர் பழுப்பு நிறமானது, பின்புறத்தில் அடர் பழுப்பு நிற திட்டுகளுடன் இருக்கும்.",
+      "தலைகீழான மூக்கு உள்ளது.",
+      "தலையின் ஒவ்வொரு பக்கத்திலும் கண்ணுக்கும் நாசிக்கும் இடையே உள்ள லோரியல் குழி.",
+    ],
+    similarOnes: [
+      {
+        name: "No Similar Snakes",
+        image: NotApplicable,
+        venomusLevel: "N/A",
+      },
+    ],
+  },
+  {
+    snakeID: "Diyabariya",
+    sinhalaName: "දියබරියා",
+    tamilName: "தண்ணி பாம்பு",
+    engName: "Sri Lankan keelback",
+    venomusLevelsinhala: "නිර්විෂ",
+    venomusLeveleng: "Non venomous",
+    venomusLeveltam: "விஷமற்றது",
+    englishName: "Sri Lankan keelback",
+    localnames: ["Diya Naya", "Diyabariya"],
+    scienteficName: "Boulenger's keelback",
+    engdescription: [
+      "Size of 10 cm- 70 cm.",
+      "a short cylindrical body that is olive-brown.",
+      "large black spots on the front of the body.",
+      "long tail, dark head and the two black strips behind the eyes.",
+      "Commonly seen near water bodies.",
+    ],
+    sinhaladescription: [
+      "10 cm - 70 cm ප්රමාණය.",
+      "ඔලිව්-දුඹුරු පැහැති කෙටි සිලින්ඩරාකාර සිරුරක්.",
+      "ශරීරයේ ඉදිරිපස විශාල කළු ලප.",
+      "දිගු වලිගය, අඳුරු හිස සහ ඇස් පිටුපස කළු තීරු දෙක.",
+      "ජලය අසල බහුලව දක්නට ලැබේ.",
+    ],
+    tamdescription: [
+      "10 செமீ அளவு - 70 செ.மீ.",
+      "ஆலிவ்-பழுப்பு நிறத்தில் இருக்கும் ஒரு குறுகிய உருளை உடல்.",
+      "உடலின் முன்புறத்தில் பெரிய கருப்பு புள்ளிகள்.",
+      "நீண்ட வால், கருமையான தலை மற்றும் கண்களுக்குப் பின்னால் இரண்டு கருப்புப் பட்டைகள்.",
+      "நீர்நிலைகளுக்கு அருகில் பொதுவாகக் காணப்படும்.",
+    ],
+    similarOnes: [
+      {
+        name: "No Similar Snakes",
+        image: NotApplicable,
+        venomusLevel: "N/A",
+      },
+    ],
+  },
+  {
+    snakeID: "Garandiya",
+    sinhalaName: "ගැරඬියා",
+    tamilName: "சாரைப்பாம்பு",
+    engName: "Sri Lankan rat snake",
+    venomusLevelsinhala: "නිර්විෂ",
+    venomusLeveleng: "Non venomous",
+    venomusLeveltam: "விஷமற்றது",
+    englishName: "Sri Lankan rat snake",
+    localnames: ["Garandiya"],
+    scienteficName: "Ptyas mucosa",
+    engdescription: [
+      "Size of 50 cm- 250 cm.",
+      "Has a long and cylindrical body.",
+      "colour varies from pale brown to nearly black.",
+      "Has prominent black vertical stripes along the lips and below the eye.",
+    ],
+    sinhaladescription: [
+      "විශාලත්වය 50 cm- 250 cm.",
+      "දිගු හා සිලින්ඩරාකාර ශරීරයක් ඇත.",
+      "වර්ණය සුදුමැලි දුඹුරු සිට ආසන්න වශයෙන් කළු දක්වා වෙනස් වේ.",
+      "තොල් දිගේ සහ ඇසට පහළින් කැපී පෙනෙන කළු සිරස් ඉරි ඇත.",
+    ],
+    tamdescription: [
+      "50 செமீ அளவு - 250 செ.மீ.",
+      "நீளமான மற்றும் உருளை உடலைக் கொண்டுள்ளது.",
+      "நிறம் வெளிர் பழுப்பு நிறத்தில் இருந்து கிட்டத்தட்ட கருப்பு வரை மாறுபடும்.",
+      "உதடுகள் மற்றும் கண்ணுக்குக் கீழே முக்கிய கருப்பு செங்குத்து கோடுகள் உள்ளன.",
+    ],
+    similarOnes: [
+      {
+        name: "නයා / Cobra / நாக பாம்பு",
+        image: Naya,
+        venomusLevel: "highly venomous",
+      },
+    ],
+  },
+  {
+    snakeID: "Haldanda",
+    sinhalaName: "හාල්දණ්ඩා",
+    tamilName: "கொம்பேறி மூக்கன்",
+    engName: "common bronze-back",
+    venomusLevelsinhala: "නිර්විෂ",
+    venomusLeveleng: "Non venomous",
+    venomusLeveltam: "விஷமற்றது",
+    englishName: "common bronze-back",
+    localnames: ["Tharu Haldanda", "Mookalan Haaldanda"],
+    scienteficName: "Dendrelaphis schokari",
+    engdescription: [
+      "Size of 15 cm- 90 cm.",
+      "has a long, slender body with a pointed head.",
+      "has a yellowish-white belly and a black line running right down the back.",
+      "have large eyes compared to the heads.",
+      "Has prominent black vertical stripes along the lips and below the eye",
+    ],
+    sinhaladescription: [
+      "විශාලත්වය 15 cm- 90 cm.",
+      "උල් වූ හිසක් සහිත දිගු සිහින් සිරුරක් ඇත.",
+      "කහ-සුදු බඩක් සහ පිටුපසින් දකුණට දිවෙන කළු රේඛාවක් ඇත.",
+      "හිසට සාපේක්ෂව විශාල ඇස් ඇත.",
+      "තොල් දිගේ සහ ඇසට පහළින් කැපී පෙනෙන කළු සිරස් ඉරි ඇත",
+    ],
+    tamdescription: [
+      "15 செமீ அளவு - 90 செ.மீ.",
+      "கூர்மையான தலையுடன் நீண்ட, மெல்லிய உடலைக் கொண்டுள்ளது.",
+      "மஞ்சள்-வெள்ளை தொப்பை மற்றும் பின்புறத்தில் வலதுபுறமாக ஓடும் கருப்பு கோடு உள்ளது.",
+      "தலைகளுடன் ஒப்பிடும்போது பெரிய கண்கள்.",
+      "உதடுகள் மற்றும் கண்ணுக்குக் கீழே முக்கிய கருப்பு செங்குத்து கோடுகள் உள்ளன",
+    ],
+    similarOnes: [
+      {
+        name: " වයිරි හාල්දණ්ඩා / Striped-tailed Bonze back / கொம்பேறி மூக்கன் ",
+        image: Wairihaldanada,
+        venomusLevel: "non-venomous",
+      },
+      {
+        name: " පදුරු හාල්දන්ඩා / Boulenger's bronze-back / கொம்பேறி மூக்கன் ",
+        image: Paduruhaldanda,
+        venomusLevel: "non-venomous",
+      },
+      {
+        name: "අහරකුක්කා / Buff Stripped Keelback / நீர்க்கடன் பாம்பு ",
+        image: Aharakukka,
+        venomusLevel: "non-venomous",
+      },
+      {
+        name: "දඟරදන්ඩා / Sri Lankan Flying Snake / இலங்கை பறக்கும் பாம்பு ",
+        image: Dangaradanda,
+        venomusLevel: "Mildly venomous",
+      },
+    ],
+  },
+  {
+    snakeID: "Katakaluwa",
+    sinhalaName: "කටකළුවා",
+    tamilName: "வக்கணத்தி",
+    engName: "Trinket snake",
+    venomusLevelsinhala: "නිර්විෂ",
+    venomusLeveleng: "Non venomous",
+    venomusLeveltam: "விஷமற்றது",
+    englishName: "Trinket snake",
+    localnames: ["Katakaluwa", "Habaraliya", "Muduhabara"],
+    scienteficName: "Coelognathus helena",
+    engdescription: [
+      "Size of 25 cm- 100 cm.",
+      "Slender, medium-sized body.",
+      "The first half of the body has crossbands with black and white boxes on chocolate brown skin.",
+      "The other half of the body is brown with two black stripes running down the tail. the belly is white.",
+      "Has a black colour inside the mouth.",
+    ],
+    sinhaladescription: [
+      "විශාලත්වය 25 cm- 100 cm.",
+      "සිහින්, මධ්යම ප්රමාණයේ ශරීරය.",
+      "ශරීරයේ පළමු භාගය චොකලට් දුඹුරු සම මත කළු සහ සුදු පෙට්ටි සහිත හරස් පටි ඇත.",
+      "ශරීරයේ අනෙක් භාගය දුඹුරු පැහැයෙන් යුක්ත වන අතර වලිගය දිගේ කළු ඉරි දෙකක් ඇත. බඩ සුදු ය.",
+      "මුඛය ඇතුළත කළු පැහැයක් ඇත.",
+    ],
+    tamdescription: [
+      "25 செமீ அளவு - 100 செ.மீ.",
+      "மெல்லிய, நடுத்தர உடல்.",
+      "உடலின் முதல் பாதியில் சாக்லேட் பழுப்பு நிற தோலில் கருப்பு மற்றும் வெள்ளை பெட்டிகளுடன் குறுக்கு பட்டைகள் உள்ளன.",
+      "உடலின் மற்ற பாதி பழுப்பு நிறத்தில் இரண்டு கருப்பு கோடுகள் வால் கீழே ஓடும். வயிறு வெள்ளை.",
+      "வாயின் உள்ளே கருப்பு நிறம் உள்ளது.",
+    ],
+    similarOnes: [
+      {
+        name: "No Similar Snakes",
+        image: NotApplicable,
+        venomusLevel: "N/A",
+      },
+    ],
+  },
+  {
+    snakeID: "Lemapila",
+    sinhalaName: "ලේ මාපිලා",
+    tamilName: "கரிக்குரியன் பூச்சக்கன்னி பாம்பு",
+    engName: "Forsten's cat snake",
+    venomusLevelsinhala: "මද විෂ",
+    venomusLeveleng: "Mildly venomous",
+    venomusLeveltam: "லேசான விஷம்",
+    englishName: "Forsten's cat snake",
+    localnames: ["Lemapila", "Kabara Mapila", "Maha Mapila", "Naga Mapila"],
+    scienteficName: "Boiga forsteni",
+    engdescription: [
+      "Size of 150 cm- 200 cm.",
+      "Flattened long body with a long and thin tail.",
+      "Triangular head with Large Eyes.",
+      "Seen in several colour combinations such as light or dark greyish, reddish-orange and Black with white or yellowish cross bars.",
+    ],
+    sinhaladescription: [
+      "150 cm - 200 cm ප්රමාණය.",
+      "දිගු හා සිහින් වලිගයක් සහිත පැතලි දිගු ශරීරය.",
+      "විශාල ඇස් සහිත ත්රිකෝණාකාර හිස.",
+      "සුදු හෝ කහ පැහැති හරස් තීරු සහිත ලා හෝ තද අළු, රතු-තැඹිලි සහ කළු වැනි වර්ණ සංයෝජන කිහිපයක දක්නට ලැබේ.",
+    ],
+    tamdescription: [
+      "150 செமீ அளவு - 200 செ.மீ.",
+      "நீண்ட மற்றும் மெல்லிய வால் கொண்ட தட்டையான நீண்ட உடல்.",
+      "பெரிய கண்கள் கொண்ட முக்கோணத் தலை.",
+      "வெளிர் அல்லது அடர் சாம்பல், சிவப்பு-ஆரஞ்சு மற்றும் கருப்பு போன்ற பல வண்ண கலவைகளில் வெள்ளை அல்லது மஞ்சள் நிற குறுக்குக் கம்பிகளுடன் காணப்படும்.",
+    ],
+    similarOnes: [
+      {
+        name: "No Similar Snakes",
+        image: NotApplicable,
+        venomusLevel: "N/A",
+      },
+    ],
+  },
+  {
+    snakeID: "Nidimapila",
+    sinhalaName: "නිදි මාපිලා",
+    tamilName: "பூனை பாம்பு",
+    engName: "Sri Lankan cat snake",
+    venomusLevelsinhala: "මද විෂ",
+    venomusLeveleng: "Mildly venomous",
+    venomusLeveltam: "லேசான விஷம்",
+    englishName: "Sri Lankan cat snake",
+    localnames: ["Nidi Mapila"],
+    scienteficName: "Boiga ceylonensis",
+    engdescription: [
+      "Size of 30 cm- 80 cm.",
+      "A thin, long body.",
+      "colour is light brown or tan with a darker pattern of blackish cross markings.",
+      "The top of the head has a clear Y mark.",
+    ],
+    sinhaladescription: [
+      "විශාලත්වය 30 cm- 80 cm.",
+      "සිහින්, දිගු ශරීරයක්.",
+      "වර්ණය කළු පැහැති හරස් සලකුණු සහිත අඳුරු රටාවක් සහිත ලා දුඹුරු හෝ දුඹුරු වේ.",
+      "හිස මුදුනේ පැහැදිලි Y ලකුණක් ඇත.",
+    ],
+    tamdescription: [
+      "30 செமீ அளவு - 80 செ.மீ.",
+      "மெல்லிய, நீண்ட உடல்.",
+      "நிறம் வெளிர் பழுப்பு அல்லது பழுப்பு நிறமானது, கருப்பு நிற குறுக்கு அடையாளங்களின் இருண்ட வடிவத்துடன் இருக்கும்.",
+      "தலையின் மேற்பகுதியில் தெளிவான Y குறி உள்ளது.",
+    ],
+    similarOnes: [
+      {
+        name: "No Similar Snakes",
+        image: NotApplicable,
+        venomusLevel: "N/A",
+      },
+    ],
+  },
+  {
+    snakeID: "Malradanakaya",
+    sinhalaName: "මල් රදනකයා",
+    tamilName: "இந்திய ஓநாய் பாம்பு",
+    engName: "Flowery wolf snake",
+    venomusLevelsinhala: "නිර්විෂ",
+    venomusLeveleng: "Non venomous",
+    venomusLeveltam: "விஷமற்றது",
+    englishName: "Flowery wolf snake",
+    localnames: [" Mal Radanakaya"],
+    scienteficName: "Lycodon anamallensis",
+    engdescription: [
+      "Size of 19 cm- 50 cm.",
+      "small, slim, cylindrical body with a pear-shaped head.",
+      "can be brown to yellowish, with white bands, or without white markings.",
+      "Black eyes with white lips which have brown marks in the center.",
+    ],
+    sinhaladescription: [
+      "විශාලත්වය 19 cm- 50 cm.",
+      "pear හැඩැති හිසක් සහිත කුඩා, සිහින්, සිලින්ඩරාකාර ශරීරය.",
+      "දුඹුරු සිට කහ දක්වා, සුදු පටි සහිත හෝ සුදු සලකුණු නොමැතිව විය හැක.",
+      "මධ්‍යයේ දුඹුරු සලකුණු ඇති සුදු තොල් සහිත කළු ඇස්.",
+    ],
+    tamdescription: [
+      "19 செமீ அளவு - 50 செ.மீ.",
+      "பேரிக்காய் வடிவ தலையுடன் சிறிய, மெல்லிய, உருளை உடல்.",
+      "பழுப்பு நிறத்தில் இருந்து மஞ்சள் நிறமாக, வெள்ளை பட்டைகளுடன் அல்லது வெள்ளை அடையாளங்கள் இல்லாமல் இருக்கலாம்.",
+      "கருப்பு நிற கண்கள் வெள்ளை உதடுகளுடன் மையத்தில் பழுப்பு நிற புள்ளிகள் உள்ளன.",
+    ],
+    similarOnes: [
+      {
+        name: "No Similar Snakes",
+        image: NotApplicable,
+        venomusLevel: "N/A",
+      },
+    ],
+  },
+  {
+    snakeID: "Pullidathkatiya",
+    sinhalaName: "පුල්ලි දත් කැටියා",
+    tamilName: "திருவாங்கூர் குக்குரி பாம்பு",
+    engName: "Streaked Kukri Snake/Dumerill's Kukri Snake",
+    venomusLevelsinhala: "නිර්විෂ",
+    venomusLeveleng: "Non venomous",
+    venomusLeveltam: "விஷமற்றது",
+    englishName: "Streaked Kukri Snake/Dumerill's Kukri Snake",
+    localnames: [" Pulli Dath Katiya"],
+    scienteficName: "Oligodon sublineatus",
+    engdescription: [
+      "Size of 26 cm- 31 cm.",
+      "has a stout, cylindrical body, a short blunt head.",
+      "Has a pinkish-brown body with three rows of brown markings on the head.",
+      "has two linear rows of marks on the two sides and usually forms stripes.",
+    ],
+    sinhaladescription: [
+      "විශාලත්වය 26 cm- 31 cm.",
+      "ඝන, සිලින්ඩරාකාර සිරුරක්, කෙටි මොට හිසක් ඇත.",
+      "හිසෙහි දුඹුරු සලකුණු පේළි තුනක් සහිත රෝස-දුඹුරු සිරුරක් ඇත.",
+      "දෙපැත්තේ රේඛීය පේළි දෙකක් ඇති අතර සාමාන්යයෙන් ඉරි සාදයි.",
+    ],
+    tamdescription: [
+      "26 செமீ- 31 செமீ அளவு.",
+      "ஒரு தடிமனான, உருளை உடல், ஒரு குறுகிய மழுங்கிய தலை உள்ளது.",
+      "தலையில் மூன்று வரிசை பழுப்பு நிற அடையாளங்களுடன் இளஞ்சிவப்பு-பழுப்பு நிற உடல் உள்ளது.",
+      "இரண்டு பக்கங்களிலும் இரண்டு நேரியல் வரிசைகள் மற்றும் பொதுவாக கோடுகளை உருவாக்குகிறது.",
+    ],
+    similarOnes: [
+      {
+        name: "No Similar Snakes",
+        image: NotApplicable,
+        venomusLevel: "N/A",
+      },
+    ],
+  },
+  {
+    snakeID: "Pimbura",
+    sinhalaName: "පිඹුරා",
+    tamilName: "மலைப்பாம்பு",
+    engName: "Indian Rock Python",
+    venomusLevelsinhala: "නිර්විෂ",
+    venomusLeveleng: "Non venomous",
+    venomusLeveltam: "விஷமற்றது",
+    englishName: "Indian Rock Python",
+    localnames: [" Pimbura"],
+    scienteficName: "Python molurus molurus",
+    engdescription: [
+      "Size of 26 cm- 31 cm.",
+      "has a stout, cylindrical body, a short blunt head.",
+      "pale tan in colour with a bold pattern of squarish brown blotches.",
+      "Has a mark-like arrow head on the top of the head. ",
+      "A rectangular mosaic-type pattern that runs like a chain on the full length of the body",
+    ],
+    sinhaladescription: [
+      "විශාලත්වය 26 cm- 31 cm.",
+      "ඝන, සිලින්ඩරාකාර සිරුරක්, කෙටි මොට හිසක් ඇත.",
+      "තද දුඹුරු පැහැති ලප සහිත තද පැහැති රටාවක් සහිත සුදුමැලි දුඹුරු පැහැයක් ගනී.",
+      "හිස මුදුනේ සලකුණක් වැනි ඊතල හිසක් ඇත.",
+      "සිරුරේ සම්පූර්ණ දිග දිගේ දම්වැලක් මෙන් දිවෙන සෘජුකෝණාස්‍රාකාර මොසෙයික් ආකාරයේ රටාවකි",
+    ],
+    tamdescription: [
+      "26 செமீ- 31 செமீ அளவு.",
+      "ஒரு தடிமனான, உருளை உடல், ஒரு குறுகிய மழுங்கிய தலை உள்ளது.",
+      "வெளிர் பழுப்பு நிறத்தில் தடிமனான வடிவத்துடன் சதுர பழுப்பு நிற புள்ளிகள்.",
+      "தலையின் மேற்பகுதியில் குறி போன்ற அம்புத் தலை உள்ளது.",
+      "ஒரு செவ்வக மொசைக் மாதிரி, உடலின் முழு நீளத்திலும் சங்கிலி போல இயங்கும்",
+    ],
+    similarOnes: [
+      {
+        name: "තිත් පොළඟා / Russell’s viper / கண்ணாடி விரியன் ",
+        image: Thithpolanga,
+        venomusLevel: "Highly venomous",
+      },
+    ],
+  },
+  {
+    snakeID: "Thithpolanga",
+    sinhalaName: "තිත් පොළඟා",
+    tamilName: "கண்ணாடி விரியன்",
+    engName: "Russell’s viper",
+    venomusLevelsinhala: "උග්‍ර විෂ",
+    venomusLeveleng: "Highly venomous",
+    venomusLeveltam: "மிகவும் தீங்கு விளைவிக்கும்",
+    englishName: "Russell’s viper",
+    localnames: ["Tith polonga", "Dhara polonga"],
+    scienteficName: "Daboia russelii",
+    engdescription: [
+      "Size of 80 cm- 130 cm.",
+      "Triangular head with a “V” mark and narrow neck.",
+      "yellowish light brown in colour with a bold pattern of oval shape marks.",
+      "Three rows of dark brown oval shaped patches edged with black and white along the body.  ",
+    ],
+    sinhaladescription: [
+      "විශාලත්වය 80 cm- 130 cm.",
+      "'V' ලකුණක් සහ පටු බෙල්ලක් සහිත ත්රිකෝණාකාර හිස.",
+      "ඕවලාකාර හැඩැති සලකුණු සහිත තද පැහැති රටාවක් සහිත කහ පැහැති ලා දුඹුරු වර්ණ.",
+      "ශරීරය දිගේ කළු සහ සුදු දාර සහිත තද දුඹුරු ඕවලාකාර හැඩැති ලප පේළි තුනක්.",
+    ],
+    tamdescription: [
+      "විශාලත්වය 80 cm- 130 cm.",
+      "'V' குறி மற்றும் குறுகிய கழுத்துடன் முக்கோண தலை.",
+      "மஞ்சள் கலந்த வெளிர் பழுப்பு நிறத்தில் முட்டை வடிவ அடையாளங்களின் தடித்த வடிவத்துடன்.",
+      "கரும்பழுப்பு நிற ஓவல் வடிவத் திட்டுகளின் மூன்று வரிசைகள் உடலுடன் கருப்பு மற்றும் வெள்ளை நிறத்தில் உள்ளன.",
+    ],
+    similarOnes: [
+      {
+        name: "පිඹුරා / Indian Rock Python / மலைப்பாம்பு ",
+        image: Pimbura,
+        venomusLevel: "Non venomous",
+      },
+    ],
+  },
+];
+export default SnakeDB;
