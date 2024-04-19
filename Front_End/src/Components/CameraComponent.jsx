@@ -51,10 +51,13 @@ const handleCaptureImage = async () => {
 
   // Make a POST request to the Flask server for prediction
   try {
-    const response = await fetch("http://localhost:5000/predict", {
-      method: "POST",
-      body: formData,
-    });
+    const response = await fetch(
+      "https://savi05-serpifyidentity.hf.space/predict",
+      {
+        method: "POST",
+        body: formData,
+      }
+    );
 
     if (response.ok) {
       const result = await response.json();
