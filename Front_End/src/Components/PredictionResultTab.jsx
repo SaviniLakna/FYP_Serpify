@@ -22,7 +22,8 @@ interface TabPanelProps {
     sinhaladescription: string,
     engdescription: string,
     tamdescription: string,
-    localnames : string; 
+    localnames: string,
+    scienteficName: string,
   };
 }
 
@@ -64,7 +65,8 @@ interface FullWidthTabsProps {
     sinhaladescription: string,
     engdescription: string,
     tamdescription: string,
-    localnames : string;
+    localnames: string,
+    scienteficName: string,
   };
 }
 
@@ -128,6 +130,14 @@ export default function FullWidthTabs(props: FullWidthTabsProps) {
               </td>
               <td className="w-10/12 py-2 border-b-[1px] border-[#565656] border-opacity-10 px-2">
                 {props.snakeIdentifiedData.venomusLeveleng}
+              </td>
+            </tr>
+            <tr>
+              <td className="w-2/12 py-2 border-b-[1px] border-r-[1px] border-[#565656] border-opacity-10">
+                Scientific Name
+              </td>
+              <td className="w-10/12 py-2 border-b-[1px] border-[#565656] border-opacity-10 px-2">
+                {props.snakeIdentifiedData.scienteficName}
               </td>
             </tr>
             <tr>
